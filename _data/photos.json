@@ -1,18 +1,18 @@
 {
-  "resort_1": "",
+  "hero": "/images/dominion-pool.webp",
   "story_main": "/images/bedroom.jpg",
+  "home_terrace": "/images/terrace.jpg",
+  "home_bedroom": "/images/bedroom_master.jpg",
   "home_kitchen": "/images/kitchen.jpg",
+  "home_bathroom": "/images/bathroom.jpg",
+  "home_living": "/images/living.jpg",
+  "home_lounge": "/images/dining.jpg",
+  "home_seaview": "/images/bedroom_twin.jpg",
+  "home_exterior": "",
+  "resort_1": "",
   "resort_2": "",
   "resort_3": "",
   "resort_4": "",
   "resort_5": "",
-  "resort_6": "",
-  "home_living": "",
-  "home_bathroom": "/images/bathroom.jpg",
-  "home_terrace": "/images/terrace.jpg",
-  "home_seaview": "",
-  "home_lounge": "",
-  "hero": "/images/dominion-pool.webp",
-  "home_bedroom": "/images/bedroom.jpg",
-  "home_exterior": ""
+  "resort_6": ""
 }

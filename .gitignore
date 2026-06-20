@@ -3,4 +3,4 @@ node_modules/
 package.json
 package-lock.json
 enhance.js
-images/*.JPG
+images/*.jpg.JPG

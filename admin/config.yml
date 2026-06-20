@@ -19,13 +19,15 @@ collections:
             name: font_style
             widget: select
             options:
-              - label: "Classic — Cormorant + Jakarta (current)"
+              - label: "Luxury — Fraunces + Inter (recommended)"
+                value: luxury
+              - label: "Classic — Cormorant + Jakarta"
                 value: classic
               - label: "Modern — Playfair + Inter"
                 value: modern
               - label: "Minimal — DM Serif + DM Sans"
                 value: minimal
-            default: classic
+            default: luxury
             hint: "Changes the font style across the entire website."
 
           - label: "── HERO SECTION ──"

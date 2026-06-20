@@ -1172,35 +1172,35 @@
         <div class="prop-grid">
             <div class="prop-card fi d1" data-slot="home_terrace">
                 <img src="images/terrace.jpg" alt="Private terrace with mosaic dining table and lush garden" class="prop-card-img">
-                <div class="prop-card-cap"><span>Private Terrace &amp; Garden</span></div>
+                <div class="prop-card-cap"><span id="cap_home_terrace">Private Terrace &amp; Garden</span></div>
             </div>
             <div class="prop-card fi d2" data-slot="home_bedroom">
                 <img src="images/bedroom.jpg" alt="Bright master suite with sliding terrace doors" class="prop-card-img">
-                <div class="prop-card-cap"><span>Master Suite</span></div>
+                <div class="prop-card-cap"><span id="cap_home_bedroom">Master Suite</span></div>
             </div>
             <div class="prop-card fi d3" data-slot="home_kitchen">
                 <img src="images/kitchen.jpg" alt="Modern kitchen with garden view window" class="prop-card-img">
-                <div class="prop-card-cap"><span>Fully Equipped Kitchen</span></div>
+                <div class="prop-card-cap"><span id="cap_home_kitchen">Fully Equipped Kitchen</span></div>
             </div>
             <div class="prop-card fi d4" data-slot="home_bathroom">
                 <img src="images/bathroom.jpg" alt="Marble en-suite bathroom with bath and double sinks" class="prop-card-img">
-                <div class="prop-card-cap"><span>En-Suite Marble Bathroom</span></div>
+                <div class="prop-card-cap"><span id="cap_home_bathroom">En-Suite Marble Bathroom</span></div>
             </div>
             <div class="prop-card fi d1" data-slot="home_living">
                 <div class="ph"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg><span>Add Photo</span></div>
-                <div class="prop-card-cap"><span>Living Room</span></div>
+                <div class="prop-card-cap"><span id="cap_home_living">Living Room</span></div>
             </div>
             <div class="prop-card fi d2" data-slot="home_lounge">
                 <div class="ph"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg><span>Add Photo</span></div>
-                <div class="prop-card-cap"><span>Lounge &amp; Dining</span></div>
+                <div class="prop-card-cap"><span id="cap_home_lounge">Lounge &amp; Dining</span></div>
             </div>
             <div class="prop-card fi d3" data-slot="home_seaview">
                 <div class="ph"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg><span>Add Photo</span></div>
-                <div class="prop-card-cap"><span>Sea View</span></div>
+                <div class="prop-card-cap"><span id="cap_home_seaview">Sea View</span></div>
             </div>
             <div class="prop-card fi d4" data-slot="home_exterior">
                 <div class="ph"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg><span>Add Photo</span></div>
-                <div class="prop-card-cap"><span>Exterior &amp; Entrance</span></div>
+                <div class="prop-card-cap"><span id="cap_home_exterior">Exterior &amp; Entrance</span></div>
             </div>
         </div>
 
@@ -2042,6 +2042,11 @@ if (window.netlifyIdentity) {
                 var loc = document.getElementById('contactLocation');
                 if (loc) loc.innerHTML = c.contact_location.replace(/\n/g, '<br>');
             }
+
+            // Photo card captions
+            ['home_terrace','home_bedroom','home_kitchen','home_bathroom','home_living','home_lounge','home_seaview','home_exterior'].forEach(function(k) {
+                setText('cap_' + k, c['cap_' + k]);
+            });
 
             // Font style
             if (c.font_style) applyFont(c.font_style);

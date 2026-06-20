@@ -94,6 +94,43 @@ collections:
             name: story_bullet5
             widget: string
 
+          - label: "── PHOTO CARD LABELS ──"
+            name: _sep_caps
+            widget: hidden
+            required: false
+
+          - label: "Card Label — Terrace & Garden"
+            name: cap_home_terrace
+            widget: string
+
+          - label: "Card Label — Master Bedroom"
+            name: cap_home_bedroom
+            widget: string
+
+          - label: "Card Label — Kitchen"
+            name: cap_home_kitchen
+            widget: string
+
+          - label: "Card Label — Bathroom"
+            name: cap_home_bathroom
+            widget: string
+
+          - label: "Card Label — Living Room"
+            name: cap_home_living
+            widget: string
+
+          - label: "Card Label — Lounge & Dining"
+            name: cap_home_lounge
+            widget: string
+
+          - label: "Card Label — Sea View"
+            name: cap_home_seaview
+            widget: string
+
+          - label: "Card Label — Exterior & Entrance"
+            name: cap_home_exterior
+            widget: string
+
           - label: "── QUOTE BANNER ──"
             name: _sep3
             widget: hidden

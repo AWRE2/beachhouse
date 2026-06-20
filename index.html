@@ -1058,7 +1058,7 @@
 
         <ul class="nav-links" role="list">
             <li><a href="#property">The Home</a></li>
-            <li><a href="#property">Gallery</a></li>
+            <li><a href="#gallery">The Resort</a></li>
             <li><a href="#amenities">Amenities</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
@@ -1073,7 +1073,7 @@
 <div class="drawer" id="drawer" role="dialog" aria-modal="true" aria-label="Navigation menu">
     <button class="drawer-close" id="drawerClose" aria-label="Close menu">×</button>
     <a href="#property"  class="dl">The Home</a>
-    <a href="#property"   class="dl">Gallery</a>
+    <a href="#gallery"    class="dl">The Resort</a>
     <a href="#amenities" class="dl">Amenities</a>
     <a href="#booking"   class="dl">Book Now</a>
     <a href="#contact"   class="dl">Contact</a>
@@ -1551,7 +1551,9 @@
                 <h3 class="form-card-h">Send an Enquiry</h3>
                 <p class="form-card-sub">We'll reply with availability and rates within 24 hours.</p>
 
-                <form id="bookingForm" action="mailto:dominionbeachhouse@icloud.com" method="POST" enctype="text/plain">
+                <form id="bookingForm" name="enquiry" method="POST" data-netlify="true" netlify-honeypot="bot-field" novalidate>
+                    <input type="hidden" name="form-name" value="enquiry">
+                    <p style="display:none"><label>Don't fill this out: <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
 
                     <div class="f-row">
                         <div class="f-group">
@@ -1701,7 +1703,7 @@
             <ul class="footer-nav" role="list">
                 <li><a href="#about">About</a></li>
                 <li><a href="#property">The Home</a></li>
-                    <li><a href="#property">Gallery</a></li>
+                    <li><a href="#gallery">The Resort</a></li>
                 <li><a href="#booking">Book</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
@@ -1901,14 +1903,39 @@
     coEl.addEventListener('change', updateCost);
 
     document.getElementById('bookingForm').addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        // Minimum nights check
         if (ciEl.value && coEl.value) {
             const nights = Math.round((new Date(coEl.value) - new Date(ciEl.value)) / 86400000);
-            if (nights < MIN_NIGHTS) { e.preventDefault(); warnEl.style.display = 'block'; warnEl.textContent = '⚠ Minimum stay is ' + MIN_NIGHTS + ' nights. Please select a longer stay.'; return; }
+            if (nights < MIN_NIGHTS) {
+                warnEl.style.display = 'block';
+                warnEl.textContent = '⚠ Minimum stay is ' + MIN_NIGHTS + ' nights. Please select a longer stay.';
+                return;
+            }
         }
+
         const btn = document.getElementById('formSubmit');
-        btn.textContent = 'Opening your email app…';
-        btn.style.background = 'var(--gold)';
-        setTimeout(() => { btn.textContent = 'Send Enquiry'; btn.style.background = ''; }, 4000);
+        btn.textContent = 'Sending…';
+        btn.disabled = true;
+
+        const form = e.target;
+        const data = new FormData(form);
+
+        fetch('/', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: new URLSearchParams(data).toString() })
+            .then(() => {
+                btn.textContent = 'Enquiry Sent!';
+                btn.style.background = '#2a7a4f';
+                form.reset();
+                warnEl.style.display = 'none';
+                setTimeout(() => { btn.textContent = 'Send Enquiry'; btn.style.background = ''; btn.disabled = false; }, 5000);
+            })
+            .catch(() => {
+                btn.textContent = 'Send Enquiry';
+                btn.disabled = false;
+                alert('Something went wrong. Please email us directly at dominionbeachhouse@icloud.com');
+            });
     });
 
 })();

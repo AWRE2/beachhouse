@@ -12,7 +12,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <style>
         /* ─── DESIGN TOKENS ─────────────────────────────── */
@@ -1079,16 +1079,16 @@
     <div class="hero-content">
         <div class="hero-badge">
             <span class="hero-badge-line" aria-hidden="true"></span>
-            <span class="hero-badge-text">Dominion Beach · New Golden Mile · Estepona</span>
+            <span class="hero-badge-text" id="heroBadge">Dominion Beach · New Golden Mile · Estepona</span>
             <span class="hero-badge-line" aria-hidden="true"></span>
         </div>
 
         <h1 class="hero-h1">
-            Luxury Beachfront<br>
-            <em>Living in Estepona</em>
+            <span id="heroLine1">Luxury Beachfront</span><br>
+            <em id="heroLine2">Living in Estepona</em>
         </h1>
 
-        <p class="hero-sub">An exclusive retreat on the shores of the Costa del Sol</p>
+        <p class="hero-sub" id="heroSub">An exclusive retreat on the shores of the Costa del Sol</p>
 
         <div class="hero-ctas">
             <a href="#booking" class="btn btn-gold">Book Now</a>
@@ -1131,23 +1131,23 @@
             </div>
 
             <div>
-                <p class="story-tag fu">A place apart</p>
-                <h2 class="story-h fu d1">
+                <p class="story-tag fu" id="storyTag">A place apart</p>
+                <h2 class="story-h fu d1" id="storyHeading">
                     Where the Mediterranean<br>becomes your backyard
                 </h2>
                 <div class="gold-rule fu d2"></div>
-                <p class="body-copy fu d3">
+                <p class="body-copy fu d3" id="storyBody1">
                     Nestled within the exclusive gated community of Dominion Beach on Estepona's prestigious New Golden Mile, this beautifully appointed home offers a rare combination of direct beach access, resort-style amenities, and the serene privacy of one of the Costa del Sol's most sought-after addresses.
                 </p>
-                <p class="body-copy fu d4" style="margin-top:16px;">
+                <p class="body-copy fu d4" id="storyBody2" style="margin-top:16px;">
                     Steps from the beach, immersed in the exclusive Dominion Beach community. Spend your mornings by the pool or strolling to the shore, and dine beneath the stars at the resort's beachfront restaurant. This is not just a holiday rental — it is a lifestyle experience.
                 </p>
                 <ul class="bullets">
-                    <li class="fu d3"><span class="dot" aria-hidden="true"></span>Directly on the beachfront promenade</li>
-                    <li class="fu d4"><span class="dot" aria-hidden="true"></span>Exclusive gated resort with 24/7 security</li>
-                    <li class="fu d4"><span class="dot" aria-hidden="true"></span>Sleeps up to 6 guests in comfort</li>
-                    <li class="fu d5"><span class="dot" aria-hidden="true"></span>Premium finishes and full equipment throughout</li>
-                    <li class="fu d5"><span class="dot" aria-hidden="true"></span>Private terrace with garden and outdoor dining</li>
+                    <li class="fu d3"><span class="dot" aria-hidden="true"></span><span id="bullet1">Directly on the beachfront promenade</span></li>
+                    <li class="fu d4"><span class="dot" aria-hidden="true"></span><span id="bullet2">Exclusive gated resort with 24/7 security</span></li>
+                    <li class="fu d4"><span class="dot" aria-hidden="true"></span><span id="bullet3">Sleeps up to 6 guests in comfort</span></li>
+                    <li class="fu d5"><span class="dot" aria-hidden="true"></span><span id="bullet4">Premium finishes and full equipment throughout</span></li>
+                    <li class="fu d5"><span class="dot" aria-hidden="true"></span><span id="bullet5">Private terrace with garden and outdoor dining</span></li>
                 </ul>
             </div>
         </div>
@@ -1291,7 +1291,7 @@
 ===================================================== -->
 <div class="quote-banner">
     <blockquote>
-        <p class="quote-text fu">
+        <p class="quote-text fu" id="quoteText">
             "Step outside, and the Mediterranean stretches endlessly before you — the beach at your doorstep, golden Andalucían light all around."
         </p>
         <footer class="quote-attr fu d2">Dominion Beach · New Golden Mile · Estepona</footer>
@@ -1566,11 +1566,11 @@
                 </p>
                 <div class="price-callout fu d2">
                     <div class="price-callout-left">
-                        <div class="price-rate"><sup>€</sup>500</div>
+                        <div class="price-rate"><sup>€</sup><span id="priceNum">500</span></div>
                         <div class="price-note">per night · direct booking</div>
                     </div>
                     <div class="price-min">
-                        <div class="price-min-num">6</div>
+                        <div class="price-min-num" id="minNights">6</div>
                         <div class="price-min-label">night minimum</div>
                     </div>
                 </div>
@@ -1691,7 +1691,7 @@
                         </div>
                         <div>
                             <div class="c-lbl">Email</div>
-                            <div class="c-val"><a href="mailto:dominionbeachhouse@icloud.com">dominionbeachhouse@icloud.com</a></div>
+                            <div class="c-val"><a href="mailto:dominionbeachhouse@icloud.com" id="contactEmail">dominionbeachhouse@icloud.com</a></div>
                         </div>
                     </div>
                     <div class="c-item fu d4">
@@ -1700,7 +1700,7 @@
                         </div>
                         <div>
                             <div class="c-lbl">WhatsApp &amp; Phone</div>
-                            <div class="c-val"><a href="https://wa.me/34630428779" target="_blank" rel="noopener noreferrer">+34 630 428 779</a></div>
+                            <div class="c-val"><a href="https://wa.me/34630428779" target="_blank" rel="noopener noreferrer" id="contactPhone">+34 630 428 779</a></div>
                         </div>
                     </div>
                     <div class="c-item fu d5">
@@ -1709,7 +1709,7 @@
                         </div>
                         <div>
                             <div class="c-lbl">Location</div>
-                            <div class="c-val">Dominion Beach, New Golden Mile<br>Estepona, Málaga, Spain</div>
+                            <div class="c-val" id="contactLocation">Dominion Beach, New Golden Mile<br>Estepona, Málaga, Spain</div>
                         </div>
                     </div>
                 </div>
@@ -1978,66 +1978,105 @@ if (window.netlifyIdentity) {
 }
 </script>
 
-<!-- Photo loader: reads _data/photos.json and populates all photo slots -->
+<!-- Content + photo loader -->
 <script>
 (function() {
     var GRADIENT = 'linear-gradient(to bottom,rgba(8,22,38,.32) 0%,rgba(8,22,38,.08) 45%,rgba(8,22,38,.60) 100%)';
+    var FONTS = {
+        classic: { serif: "'Cormorant Garamond', Georgia, serif", sans: "'Plus Jakarta Sans', system-ui, sans-serif" },
+        modern:  { serif: "'Playfair Display', Georgia, serif",   sans: "'Inter', system-ui, sans-serif" },
+        minimal: { serif: "'DM Serif Display', Georgia, serif",   sans: "'DM Sans', system-ui, sans-serif" }
+    };
 
-    function makeImg(src, cls) {
-        var img = document.createElement('img');
-        img.src = src;
-        img.className = cls;
-        return img;
+    function setText(id, val) { var el = document.getElementById(id); if (el && val) el.textContent = val; }
+    function makeImg(src, cls) { var img = document.createElement('img'); img.src = src; img.className = cls; return img; }
+
+    function applyFont(style) {
+        var pair = FONTS[style] || FONTS.classic;
+        document.documentElement.style.setProperty('--ff-serif', pair.serif);
+        document.documentElement.style.setProperty('--ff-sans', pair.sans);
     }
 
+    // Load content
+    fetch('/_data/content.json')
+        .then(function(r) { return r.json(); })
+        .then(function(c) {
+            setText('heroBadge',   c.hero_badge);
+            setText('heroLine1',   c.hero_h1_line1);
+            setText('heroLine2',   c.hero_h1_line2);
+            setText('heroSub',     c.hero_subtitle);
+            setText('storyTag',    c.story_tag);
+            setText('storyBody1',  c.story_body1);
+            setText('storyBody2',  c.story_body2);
+            setText('bullet1',     c.story_bullet1);
+            setText('bullet2',     c.story_bullet2);
+            setText('bullet3',     c.story_bullet3);
+            setText('bullet4',     c.story_bullet4);
+            setText('bullet5',     c.story_bullet5);
+            setText('quoteText',   c.quote_text ? '“' + c.quote_text + '”' : null);
+            setText('priceNum',    c.price_per_night);
+            setText('minNights',   c.min_nights);
+
+            // Story heading (preserves <br>)
+            if (c.story_heading) {
+                var sh = document.getElementById('storyHeading');
+                if (sh) sh.innerHTML = c.story_heading.replace(/\n/g, '<br>');
+            }
+
+            // Contact email
+            if (c.contact_email) {
+                var em = document.getElementById('contactEmail');
+                if (em) { em.textContent = c.contact_email; em.href = 'mailto:' + c.contact_email; }
+            }
+            // Contact phone
+            if (c.contact_phone) {
+                var ph = document.getElementById('contactPhone');
+                if (ph) {
+                    ph.textContent = c.contact_phone;
+                    var digits = c.contact_phone.replace(/[^0-9]/g, '');
+                    ph.href = 'https://wa.me/' + digits;
+                }
+            }
+            // Contact location
+            if (c.contact_location) {
+                var loc = document.getElementById('contactLocation');
+                if (loc) loc.innerHTML = c.contact_location.replace(/\n/g, '<br>');
+            }
+
+            // Font style
+            if (c.font_style) applyFont(c.font_style);
+        })
+        .catch(function() {});
+
+    // Load photos
     fetch('/_data/photos.json')
         .then(function(r) { return r.json(); })
         .then(function(p) {
-            // Hero background
             if (p.hero) {
                 var bg = document.getElementById('heroBg');
                 if (bg) bg.style.background = GRADIENT + ", url('" + p.hero + "') center / cover no-repeat";
             }
-
-            // Story image
             if (p.story_main) {
                 var si = document.getElementById('storyImg');
                 if (si) si.src = p.story_main;
             }
-
-            // Home + resort cards
             document.querySelectorAll('[data-slot]').forEach(function(el) {
-                var slot = el.getAttribute('data-slot');
-                var url  = p[slot];
+                var url = p[el.getAttribute('data-slot')];
                 if (!url) return;
-
-                // Prop card
                 if (el.classList.contains('prop-card')) {
-                    var ph  = el.querySelector('.ph');
-                    var img = el.querySelector('.prop-card-img');
-                    if (ph) {
-                        var newImg = makeImg(url, 'prop-card-img');
-                        el.replaceChild(newImg, ph);
-                    } else if (img) {
-                        img.src = url;
-                    }
+                    var ph = el.querySelector('.ph'), img = el.querySelector('.prop-card-img');
+                    if (ph) el.replaceChild(makeImg(url, 'prop-card-img'), ph);
+                    else if (img) img.src = url;
                 }
-
-                // Gallery item
                 if (el.classList.contains('g-item')) {
-                    var ph2  = el.querySelector('.ph');
-                    var img2 = el.querySelector('.g-item-img');
+                    var ph2 = el.querySelector('.ph'), img2 = el.querySelector('.g-item-img');
                     el.setAttribute('data-src', url);
-                    if (ph2) {
-                        var newImg2 = makeImg(url, 'g-item-img');
-                        el.replaceChild(newImg2, ph2);
-                    } else if (img2) {
-                        img2.src = url;
-                    }
+                    if (ph2) el.replaceChild(makeImg(url, 'g-item-img'), ph2);
+                    else if (img2) img2.src = url;
                 }
             });
         })
-        .catch(function() {}); // Graceful fallback — placeholders stay visible
+        .catch(function() {});
 }());
 </script>
 

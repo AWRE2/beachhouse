@@ -8,8 +8,138 @@ public_folder: /images
 locale: en
 
 collections:
+  - name: content
+    label: "✏️ Text & Fonts"
+    files:
+      - label: "All Text & Fonts"
+        name: all_content
+        file: _data/content.json
+        fields:
+          - label: "🎨 Font Style"
+            name: font_style
+            widget: select
+            options:
+              - label: "Classic — Cormorant + Jakarta (current)"
+                value: classic
+              - label: "Modern — Playfair + Inter"
+                value: modern
+              - label: "Minimal — DM Serif + DM Sans"
+                value: minimal
+            default: classic
+            hint: "Changes the font style across the entire website."
+
+          - label: "── HERO SECTION ──"
+            name: _sep1
+            widget: hidden
+            required: false
+
+          - label: "Badge Text"
+            name: hero_badge
+            widget: string
+            hint: "Small text above the main title. E.g. 'Dominion Beach · New Golden Mile · Estepona'"
+
+          - label: "Headline — Line 1"
+            name: hero_h1_line1
+            widget: string
+            hint: "First line of the big hero title. E.g. 'Luxury Beachfront'"
+
+          - label: "Headline — Line 2 (italic)"
+            name: hero_h1_line2
+            widget: string
+            hint: "Second line shown in italic. E.g. 'Living in Estepona'"
+
+          - label: "Subtitle"
+            name: hero_subtitle
+            widget: string
+            hint: "Small text below the headline."
+
+          - label: "── STORY SECTION ──"
+            name: _sep2
+            widget: hidden
+            required: false
+
+          - label: "Story Tag"
+            name: story_tag
+            widget: string
+
+          - label: "Story Heading"
+            name: story_heading
+            widget: string
+
+          - label: "Story Paragraph 1"
+            name: story_body1
+            widget: text
+
+          - label: "Story Paragraph 2"
+            name: story_body2
+            widget: text
+
+          - label: "Bullet Point 1"
+            name: story_bullet1
+            widget: string
+
+          - label: "Bullet Point 2"
+            name: story_bullet2
+            widget: string
+
+          - label: "Bullet Point 3"
+            name: story_bullet3
+            widget: string
+
+          - label: "Bullet Point 4"
+            name: story_bullet4
+            widget: string
+
+          - label: "Bullet Point 5"
+            name: story_bullet5
+            widget: string
+
+          - label: "── QUOTE BANNER ──"
+            name: _sep3
+            widget: hidden
+            required: false
+
+          - label: "Quote Text"
+            name: quote_text
+            widget: text
+            hint: "The large italic quote shown in the banner between sections."
+
+          - label: "── BOOKING SECTION ──"
+            name: _sep4
+            widget: hidden
+            required: false
+
+          - label: "Price Per Night (€)"
+            name: price_per_night
+            widget: string
+            hint: "Number only, e.g. 500"
+
+          - label: "Minimum Nights"
+            name: min_nights
+            widget: string
+            hint: "Number only, e.g. 6"
+
+          - label: "── CONTACT ──"
+            name: _sep5
+            widget: hidden
+            required: false
+
+          - label: "Email Address"
+            name: contact_email
+            widget: string
+
+          - label: "Phone / WhatsApp"
+            name: contact_phone
+            widget: string
+            hint: "Include country code, e.g. +34 630 428 779"
+
+          - label: "Location Text"
+            name: contact_location
+            widget: text
+            hint: "Use a new line for line 2."
+
   - name: photos
-    label: "📸 Site Photos"
+    label: "📸 Photos"
     files:
       - label: "All Photos"
         name: all_photos
@@ -25,7 +155,6 @@ collections:
             name: story_main
             widget: image
             required: false
-            hint: "Photo shown next to 'Where the Mediterranean becomes your backyard' text."
 
           - label: "🌿 Home — Terrace & Garden"
             name: home_terrace

@@ -1,0 +1,100 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: images
+public_folder: /images
+
+locale: en
+
+collections:
+  - name: photos
+    label: "📸 Site Photos"
+    files:
+      - label: "All Photos"
+        name: all_photos
+        file: _data/photos.json
+        fields:
+          - label: "🏠 Hero (Front Page Background)"
+            name: hero
+            widget: image
+            required: false
+            hint: "Main photo shown on the front page. Landscape orientation works best."
+
+          - label: "📖 Story Section Photo"
+            name: story_main
+            widget: image
+            required: false
+            hint: "Photo shown next to 'Where the Mediterranean becomes your backyard' text."
+
+          - label: "🌿 Home — Terrace & Garden"
+            name: home_terrace
+            widget: image
+            required: false
+
+          - label: "🛏 Home — Master Bedroom"
+            name: home_bedroom
+            widget: image
+            required: false
+
+          - label: "🍳 Home — Kitchen"
+            name: home_kitchen
+            widget: image
+            required: false
+
+          - label: "🛁 Home — Bathroom"
+            name: home_bathroom
+            widget: image
+            required: false
+
+          - label: "🛋 Home — Living Room"
+            name: home_living
+            widget: image
+            required: false
+
+          - label: "🍽 Home — Lounge & Dining"
+            name: home_lounge
+            widget: image
+            required: false
+
+          - label: "🌊 Home — Sea View"
+            name: home_seaview
+            widget: image
+            required: false
+
+          - label: "🚪 Home — Exterior & Entrance"
+            name: home_exterior
+            widget: image
+            required: false
+
+          - label: "🏖 Resort Photo 1 (Wide)"
+            name: resort_1
+            widget: image
+            required: false
+            hint: "Displayed as a wide banner (spans 2 columns)."
+
+          - label: "🏊 Resort Photo 2"
+            name: resort_2
+            widget: image
+            required: false
+
+          - label: "🌴 Resort Photo 3"
+            name: resort_3
+            widget: image
+            required: false
+
+          - label: "🏡 Resort Photo 4 (Wide)"
+            name: resort_4
+            widget: image
+            required: false
+            hint: "Displayed as a wide banner (spans 2 columns)."
+
+          - label: "☀️ Resort Photo 5"
+            name: resort_5
+            widget: image
+            required: false
+
+          - label: "🌅 Resort Photo 6"
+            name: resort_6
+            widget: image
+            required: false

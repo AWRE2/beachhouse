@@ -1,0 +1,2045 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Luxury beachfront holiday home at Dominion Beach, Estepona (Málaga). Direct beach access, two pools, private gym, and exclusive restaurant. New Golden Mile, Costa del Sol.">
+    <meta name="keywords" content="Estepona luxury penthouse rental, Dominion Beach rental, New Golden Mile vacation rental, beachfront apartment Estepona, luxury holiday rental Málaga Costa del Sol">
+    <meta property="og:title" content="Dominion Beach House | Luxury Beachfront Living in Estepona">
+    <meta property="og:description" content="Exclusive beachfront living in Estepona's prestigious Dominion Beach resort. Direct beach access, two pools, gym, and private restaurant.">
+    <meta property="og:type" content="website">
+    <title>Dominion Beach House | Luxury Beachfront Living in Estepona</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        /* ─── DESIGN TOKENS ─────────────────────────────── */
+        :root {
+            --sand-50:   #faf8f4;
+            --sand-100:  #f4ede0;
+            --sand-200:  #e8d5b7;
+            --sand-300:  #d4b882;
+            --ocean-950: #070f18;
+            --ocean-900: #0d2438;
+            --ocean-800: #1a3a5c;
+            --ocean-700: #1e4a74;
+            --ocean-500: #2e6faa;
+            --ocean-300: #5a9fd4;
+            --gold:      #0fa8e8;
+            --gold-lt:   #3dc2f7;
+            --white:     #ffffff;
+            --cream:     #faf8f5;
+            --text-dark: #1a1a2e;
+            --text-mid:  #4a4a5a;
+            --text-lt:   #8a8a9a;
+            --ff-serif:  'Cormorant Garamond', Georgia, serif;
+            --ff-sans:   'Plus Jakarta Sans', system-ui, sans-serif;
+            --ease:      cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            --nav-h:     72px;
+        }
+
+        /* ─── RESET ──────────────────────────────────────── */
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; font-size: 16px; }
+        body {
+            font-family: var(--ff-sans);
+            font-weight: 300;
+            color: var(--text-dark);
+            background: var(--cream);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+        img { max-width: 100%; height: auto; display: block; }
+        a { color: inherit; text-decoration: none; }
+        button { font-family: inherit; }
+
+        /* ─── TYPOGRAPHY UTILS ───────────────────────────── */
+        .label {
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 14px;
+            display: block;
+        }
+        .h-display {
+            font-family: var(--ff-serif);
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 600;
+            line-height: 1.15;
+        }
+        .body-copy {
+            font-size: 15px;
+            font-weight: 400;
+            color: var(--text-mid);
+            line-height: 1.85;
+        }
+        .gold-rule {
+            width: 48px; height: 1px;
+            background: var(--gold);
+            margin: 20px 0;
+        }
+        .gold-rule.center { margin-left: auto; margin-right: auto; }
+
+        /* ─── LAYOUT ─────────────────────────────────────── */
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        @media (min-width: 768px) { .container { padding: 0 40px; } }
+
+        .section { padding: 80px 0; }
+        @media (min-width: 768px) { .section { padding: 120px 0; } }
+
+        .text-center { text-align: center; }
+
+        /* ─── BUTTONS ────────────────────────────────────── */
+        .btn {
+            display: inline-block;
+            padding: 15px 36px;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            border-radius: 2px;
+            cursor: pointer;
+            transition: all 0.22s var(--ease);
+            border: none;
+        }
+        .btn-gold {
+            background: #e8312a;
+            color: var(--white);
+            font-weight: 900;
+        }
+        .btn-gold:hover {
+            background: #c0392b;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 32px rgba(232,49,42,.4);
+        }
+        .btn-ghost {
+            background: var(--white);
+            color: #000;
+            border: 1px solid var(--white);
+            font-weight: 900;
+        }
+        .btn-ghost:hover {
+            background: rgba(255,255,255,.88);
+            border-color: var(--white);
+            color: #000;
+        }
+        .btn-navy {
+            background: var(--ocean-800);
+            color: var(--white);
+        }
+        .btn-navy:hover {
+            background: var(--gold);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 32px rgba(201,164,110,.3);
+        }
+
+        /* ─── NAV ────────────────────────────────────────── */
+        .nav {
+            position: fixed; top: 0; left: 0; right: 0;
+            z-index: 1000;
+            height: var(--nav-h);
+            display: flex;
+            align-items: center;
+            padding: 0 24px;
+            transition: background .45s var(--ease), box-shadow .45s var(--ease);
+        }
+        .nav.solid {
+            background: rgba(255,255,255,.97);
+            backdrop-filter: blur(14px);
+            box-shadow: 0 1px 0 rgba(0,0,0,.07);
+        }
+        .nav-inner {
+            max-width: 1280px; width: 100%;
+            margin: 0 auto;
+            display: flex; align-items: center; justify-content: space-between;
+        }
+        .nav-logo { display: flex; flex-direction: column; gap: 1px; }
+        .nav-logo-name {
+            font-family: var(--ff-serif);
+            font-size: 19px; font-weight: 500;
+            letter-spacing: .03em;
+            color: var(--white);
+            transition: color .4s var(--ease);
+        }
+        .nav.solid .nav-logo-name { color: var(--ocean-900); }
+        .nav-logo-loc {
+            font-size: 9px; font-weight: 500;
+            letter-spacing: .2em; text-transform: uppercase;
+            color: rgba(255,255,255,.65);
+            transition: color .4s var(--ease);
+        }
+        .nav.solid .nav-logo-loc { color: var(--gold); }
+
+        .nav-links {
+            display: none; gap: 34px; list-style: none;
+        }
+        @media (min-width: 900px) { .nav-links { display: flex; } }
+        .nav-links a {
+            font-size: 11px; font-weight: 700;
+            letter-spacing: .12em; text-transform: uppercase;
+            color: rgba(255,255,255,.82);
+            transition: color .2s ease-out;
+        }
+        .nav.solid .nav-links a { color: var(--text-mid); }
+        .nav-links a:hover { color: var(--gold) !important; }
+
+        .nav-book {
+            display: none;
+            padding: 9px 22px;
+            border: 1px solid #c0392b;
+            border-radius: 2px;
+            font-size: 11px; font-weight: 600;
+            letter-spacing: .14em; text-transform: uppercase;
+            color: var(--white);
+            background: #c0392b;
+            transition: all .22s ease-out;
+        }
+        @media (min-width: 768px) { .nav-book { display: block; } }
+        .nav.solid .nav-book { border-color: #c0392b; background: #c0392b; color: var(--white); }
+        .nav-book:hover { background: #a93226; border-color: #a93226; color: var(--white) !important; }
+
+        .burger {
+            display: flex; flex-direction: column; gap: 5px;
+            cursor: pointer; background: none; border: none; padding: 4px;
+        }
+        @media (min-width: 900px) { .burger { display: none; } }
+        .burger span {
+            width: 22px; height: 1.5px;
+            background: var(--white);
+            display: block;
+            transition: background .3s ease-out;
+        }
+        .nav.solid .burger span { background: var(--text-dark); }
+
+        /* Mobile drawer */
+        .drawer {
+            position: fixed; inset: 0;
+            background: var(--ocean-900);
+            z-index: 999;
+            display: flex; flex-direction: column;
+            align-items: center; justify-content: center;
+            gap: 28px;
+            opacity: 0; pointer-events: none;
+            transition: opacity .4s var(--ease);
+        }
+        .drawer.open { opacity: 1; pointer-events: all; }
+        .drawer-close {
+            position: absolute; top: 20px; right: 24px;
+            background: none; border: none;
+            color: var(--white); font-size: 30px; cursor: pointer;
+            font-family: var(--ff-serif); line-height: 1;
+        }
+        .drawer a {
+            font-family: var(--ff-serif);
+            font-size: clamp(1.6rem, 6vw, 2.2rem);
+            font-weight: 300;
+            color: var(--white);
+            letter-spacing: .04em;
+            transition: color .2s ease-out;
+        }
+        .drawer a:hover { color: var(--gold); }
+
+        /* ─── HERO ───────────────────────────────────────── */
+        .hero {
+            position: relative;
+            height: 100dvh; min-height: 600px;
+            display: flex; align-items: center; justify-content: center;
+            overflow: hidden;
+        }
+        .hero-bg {
+            position: absolute; inset: 0;
+            background:
+                linear-gradient(to bottom,
+                    rgba(8,22,38,.32) 0%,
+                    rgba(8,22,38,.08) 45%,
+                    rgba(8,22,38,.60) 100%),
+                repeating-linear-gradient(-45deg, #b8c8d8 0px, #b8c8d8 10px, #9fb2c4 10px, #9fb2c4 20px);
+            /* ✏️ REPLACE: swap repeating-linear-gradient above with url('images/your-hero.jpg') center / cover no-repeat */
+            transform: scale(1.12);
+            will-change: transform;
+            filter: brightness(1.1) contrast(1.08) saturate(1.18);
+            animation: heroKenBurns 12s var(--ease) forwards;
+        }
+        @keyframes heroKenBurns {
+            from { transform: scale(1.14); filter: brightness(1.0) contrast(1.05) saturate(1.1); }
+            to   { transform: scale(1.06); filter: brightness(1.1) contrast(1.09) saturate(1.2); }
+        }
+        .hero-content {
+            position: relative; z-index: 2;
+            text-align: center;
+            padding: 0 24px;
+            max-width: 920px;
+        }
+        .hero-badge {
+            display: inline-flex; align-items: center; gap: 14px;
+            margin-bottom: 30px;
+            opacity: 0; animation: fadeUp .8s .25s var(--ease) forwards;
+        }
+        .hero-badge-line { width: 36px; height: 1px; background: var(--gold); }
+        .hero-badge-text {
+            font-size: 11px; font-weight: 800;
+            letter-spacing: .26em; text-transform: uppercase;
+            color: var(--white);
+            text-shadow: -1px -1px 0 #000, 0 -1px 0 #000, 1px -1px 0 #000, 1px 0 0 #000, 1px 1px 0 #000, 0 1px 0 #000, -1px 1px 0 #000, -1px 0 0 #000;
+        }
+        .hero-h1 {
+            font-family: var(--ff-serif);
+            font-size: clamp(2.6rem, 8.5vw, 5.8rem);
+            font-weight: 700;
+            color: var(--white);
+            line-height: 1.08;
+            margin-bottom: 22px;
+            opacity: 0; animation: fadeUp .8s .45s var(--ease) forwards;
+            text-shadow: -1px -1px 0 #000, 0 -1px 0 #000, 1px -1px 0 #000, 1px 0 0 #000, 1px 1px 0 #000, 0 1px 0 #000, -1px 1px 0 #000, -1px 0 0 #000;
+        }
+        .hero-h1 em {
+            font-style: italic; color: var(--white);
+            text-shadow: -1px -1px 0 #000, 0 -1px 0 #000, 1px -1px 0 #000, 1px 0 0 #000, 1px 1px 0 #000, 0 1px 0 #000, -1px 1px 0 #000, -1px 0 0 #000;
+        }
+        .hero-sub {
+            font-size: clamp(14px, 2.5vw, 18px);
+            font-weight: 700;
+            color: var(--white);
+            letter-spacing: .06em;
+            margin-bottom: 44px;
+            opacity: 0; animation: fadeUp .8s .65s var(--ease) forwards;
+            text-shadow: -1px -1px 0 #000, 0 -1px 0 #000, 1px -1px 0 #000, 1px 0 0 #000, 1px 1px 0 #000, 0 1px 0 #000, -1px 1px 0 #000, -1px 0 0 #000;
+        }
+        .hero-ctas {
+            display: flex; gap: 14px;
+            justify-content: center; flex-wrap: wrap;
+            opacity: 0; animation: fadeUp .8s .85s var(--ease) forwards;
+        }
+        .hero-scroll {
+            position: absolute; bottom: 30px; left: 50%;
+            transform: translateX(-50%);
+            display: flex; flex-direction: column; align-items: center; gap: 8px;
+            color: rgba(255,255,255,.55);
+            font-size: 10px; letter-spacing: .16em; text-transform: uppercase;
+            animation: fadeIn 1s 1.4s ease-out both;
+        }
+        .scroll-bar {
+            width: 1px; height: 40px;
+            background: linear-gradient(to bottom, rgba(255,255,255,.55), transparent);
+            animation: scrollPulse 2s ease-in-out infinite;
+        }
+
+        /* ─── STATS STRIP ────────────────────────────────── */
+        .strip {
+            background: var(--ocean-900);
+            padding: 48px 24px;
+        }
+        .strip-grid {
+            max-width: 1280px; margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+            gap: 32px;
+        }
+        @media (min-width: 640px) { .strip-grid { grid-template-columns: repeat(4,1fr); } }
+        .stat { text-align: center; }
+        .stat-n {
+            font-family: var(--ff-serif);
+            font-size: 2.6rem; font-weight: 700;
+            color: var(--gold); line-height: 1;
+            margin-bottom: 8px;
+        }
+        .stat-l {
+            font-size: 11px; font-weight: 500;
+            letter-spacing: .14em; text-transform: uppercase;
+            color: rgba(255,255,255,.45);
+        }
+
+        /* ─── STORY ──────────────────────────────────────── */
+        .story { background: var(--cream); }
+        .story-grid {
+            display: grid; gap: 60px;
+            align-items: center;
+        }
+        @media (min-width: 900px) { .story-grid { grid-template-columns: 1fr 1fr; gap: 80px; } }
+        .img-wrap {
+            position: relative;
+            aspect-ratio: 4/5;
+            overflow: hidden;
+            border-radius: 2px;
+        }
+        .img-fill {
+            width: 100%; height: 100%;
+            object-fit: cover;
+            filter: brightness(1.08) contrast(1.08) saturate(1.14);
+            transition: transform .7s var(--ease), filter .7s var(--ease);
+        }
+        .img-wrap:hover .img-fill {
+            transform: scale(1.06);
+            filter: brightness(1.12) contrast(1.1) saturate(1.2);
+        }
+        /* Clip-path wipe-in for story image */
+        .img-wrap .img-fill {
+            clip-path: inset(0 100% 0 0);
+            transition: clip-path .9s .2s var(--ease), transform .7s var(--ease), filter .7s var(--ease);
+        }
+        .img-wrap.vis .img-fill {
+            clip-path: inset(0 0% 0 0);
+        }
+        .img-accent {
+            position: absolute; bottom: -22px; right: -22px;
+            width: 110px; height: 110px;
+            border: 1px solid var(--gold);
+            border-radius: 2px; z-index: -1;
+        }
+        .story-tag {
+            font-family: var(--ff-serif);
+            font-style: italic; font-size: 14px;
+            color: var(--gold); margin-bottom: 14px;
+        }
+        .story-h { font-size: clamp(1.9rem,4vw,3rem); font-weight: 600; margin-bottom: 22px; }
+        .bullets { list-style: none; display: flex; flex-direction: column; gap: 12px; margin-top: 30px; }
+        .bullets li {
+            display: flex; align-items: center; gap: 12px;
+            font-size: 14px; color: var(--text-mid);
+        }
+        .dot { width: 6px; height: 6px; background: var(--gold); border-radius: 50%; flex-shrink: 0; }
+
+        /* ─── PROPERTY CARDS ──────────────────────────────── */
+        .prop { background: var(--sand-50); }
+        .section-head { text-align: center; margin-bottom: 60px; }
+        .prop-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 16px;
+        }
+        @media (min-width: 640px)  { .prop-grid { grid-template-columns: 1fr 1fr; } }
+        @media (min-width: 1024px) { .prop-grid { grid-template-columns: 1fr 1fr 1fr 1fr; } }
+        .prop-card {
+            position: relative; overflow: hidden;
+            border-radius: 2px; aspect-ratio: 4/3;
+            cursor: pointer;
+            border: 3px solid #111;
+        }
+        .prop-card-img {
+            width: 100%; height: 100%; object-fit: cover;
+            filter: brightness(1.28) contrast(1.22) saturate(1.38) sepia(0.07);
+            transition: transform .7s var(--ease), filter .7s var(--ease);
+        }
+        .prop-card:hover .prop-card-img {
+            transform: scale(1.08);
+            filter: brightness(1.34) contrast(1.26) saturate(1.44) sepia(0.07);
+        }
+        /* Staggered scale-in for property cards */
+        .prop-card {
+            transform: scale(0.96);
+            opacity: 0;
+            transition: transform .7s var(--ease), opacity .7s var(--ease), box-shadow .3s ease-out;
+        }
+        .prop-card.vis {
+            transform: scale(1);
+            opacity: 1;
+        }
+        .prop-card:hover { box-shadow: 0 16px 48px rgba(0,0,0,.18); }
+        .prop-card-cap {
+            position: absolute; inset: 0;
+            background: linear-gradient(to top, rgba(7,20,34,.72) 0%, transparent 55%);
+            display: flex; align-items: flex-end; padding: 22px;
+            opacity: 0; transition: opacity .35s var(--ease);
+        }
+        .prop-card:hover .prop-card-cap { opacity: 1; }
+        .prop-card-cap span {
+            font-family: var(--ff-serif);
+            font-size: 1.2rem; font-weight: 300;
+            color: var(--white);
+        }
+
+        /* Gradient stand-ins — REMOVE once real photos are added */
+        .g-terrace  { background: linear-gradient(145deg,#2d6a2d,#5c9e40 45%,#a8d080 70%,#e4d090); }
+        .g-bedroom  { background: linear-gradient(145deg,#1a3d6a,#2e6aa0 40%,#6aaecc 70%,#c8dcec); }
+        .g-kitchen  { background: linear-gradient(145deg,#2a2a2a,#555 40%,#e0e0e0); }
+        .g-bathroom { background: linear-gradient(145deg,#c0a880,#dcc8a8 50%,#f5ecd8); }
+        .g-living   { background: linear-gradient(145deg,#e8dcc8,#d0c0a0 50%,#b89870); }
+        .g-pool     { background: linear-gradient(145deg,#082848,#1060a0 40%,#40a0d8 70%,#90d0f0); }
+        .g-garden   { background: linear-gradient(145deg,#1a4a1a,#408040 50%,#90c860 75%,#d4b882); }
+        .g-laundry  { background: linear-gradient(145deg,#c8c8d8,#e8e8f0 50%,#f8f8ff); }
+
+        /* ─── QUOTE BANNER ───────────────────────────────── */
+        .quote-banner {
+            background: var(--sand-100);
+            padding: 80px 24px;
+            text-align: center;
+        }
+        .quote-text {
+            font-family: var(--ff-serif);
+            font-size: clamp(1.4rem,4vw,2.4rem);
+            font-weight: 700; font-style: italic;
+            color: var(--ocean-900);
+            max-width: 780px; margin: 0 auto;
+            line-height: 1.55;
+        }
+        .quote-attr {
+            margin-top: 22px;
+            font-size: 11px; font-weight: 600;
+            letter-spacing: .2em; text-transform: uppercase;
+            color: var(--gold);
+        }
+
+        /* ─── RESORT ─────────────────────────────────────── */
+        .resort {
+            background: var(--ocean-900);
+            position: relative; overflow: hidden;
+        }
+        .resort::before {
+            content: '';
+            position: absolute; inset: 0;
+            background:
+                radial-gradient(ellipse at 15% 50%, rgba(30,74,116,.45) 0%, transparent 55%),
+                radial-gradient(ellipse at 85% 50%, rgba(201,164,110,.06) 0%, transparent 55%);
+            pointer-events: none;
+        }
+        .resort-inner { position: relative; z-index: 1; }
+        .resort .label, .resort .h-display { color: var(--white); }
+        .resort .label { color: var(--gold); }
+        .resort .body-copy { color: rgba(255,255,255,.6); }
+        .resort-cards {
+            display: grid; gap: 20px;
+            margin-top: 60px;
+        }
+        @media (min-width: 640px)  { .resort-cards { grid-template-columns: 1fr 1fr; } }
+        @media (min-width: 1024px) { .resort-cards { grid-template-columns: repeat(3,1fr); } }
+        .resort-card {
+            padding: 32px 28px;
+            border: 1px solid rgba(255,255,255,.08);
+            border-radius: 2px;
+            display: flex; flex-direction: column; gap: 14px;
+            transition: border-color .3s ease-out, background .3s ease-out;
+        }
+        .resort-card:hover {
+            border-color: var(--gold);
+            background: rgba(255,255,255,.03);
+        }
+        .r-icon { width: 42px; height: 42px; color: var(--gold); }
+        .r-title {
+            font-family: var(--ff-serif);
+            font-size: 1.25rem; font-weight: 600;
+            color: var(--white);
+        }
+        .r-body {
+            font-size: 14px; font-weight: 400;
+            color: rgba(255,255,255,.52);
+            line-height: 1.75;
+        }
+
+        /* ─── PHOTO PLACEHOLDERS ─────────────────────────── */
+        .ph {
+            width: 100%; height: 100%;
+            background: repeating-linear-gradient(
+                -45deg,
+                #e8e0d4 0px, #e8e0d4 10px,
+                #ddd5c6 10px, #ddd5c6 20px
+            );
+            display: flex; flex-direction: column;
+            align-items: center; justify-content: center;
+            gap: 10px; color: #8a7d6b;
+            font-family: var(--ff-sans); font-size: 11px;
+            font-weight: 600; letter-spacing: .12em;
+            text-transform: uppercase; text-align: center;
+            padding: 16px;
+        }
+        .ph svg { opacity: .45; }
+        .ph span { opacity: .7; }
+
+        /* ─── GALLERY ────────────────────────────────────── */
+        .gallery-bg { background: var(--cream); }
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+            gap: 8px;
+        }
+        @media (min-width: 640px)  { .gallery-grid { grid-template-columns: repeat(3,1fr); gap: 10px; } }
+        @media (min-width: 1024px) { .gallery-grid { grid-template-columns: repeat(4,1fr); } }
+        .g-item {
+            position: relative;
+            aspect-ratio: 1; overflow: hidden;
+            border-radius: 2px; cursor: pointer;
+            border: 3px solid #111;
+            box-shadow: 0 4px 18px rgba(0,0,0,.25);
+        }
+        .g-item.span2 { grid-column: span 2; aspect-ratio: 2/1; }
+        @media (max-width: 639px) { .g-item.span2 { grid-column: span 1; aspect-ratio: 1; } }
+        .g-item-img {
+            width: 100%; height: 100%; object-fit: cover;
+            filter: brightness(1.05) contrast(1.1) saturate(1.16);
+            transition: transform .55s var(--ease), filter .55s var(--ease);
+        }
+        .g-item:hover .g-item-img {
+            transform: scale(1.1);
+            filter: brightness(1.12) contrast(1.14) saturate(1.26);
+        }
+        /* Gallery items slide up on reveal */
+        .g-item {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity .6s var(--ease), transform .6s var(--ease);
+        }
+        .g-item.vis {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .g-overlay {
+            position: absolute; inset: 0;
+            background: rgba(13,36,56,0);
+            display: flex; align-items: center; justify-content: center;
+            transition: background .3s ease-out;
+        }
+        .g-item:hover .g-overlay { background: rgba(13,36,56,.45); }
+        .g-zoom {
+            color: var(--white);
+            opacity: 0; transform: scale(.65);
+            transition: all .3s var(--ease);
+        }
+        .g-item:hover .g-zoom { opacity: 1; transform: scale(1); }
+
+        /* Lightbox */
+        .lbox {
+            position: fixed; inset: 0;
+            background: rgba(0,0,0,.96);
+            z-index: 2000;
+            display: flex; align-items: center; justify-content: center;
+            opacity: 0; pointer-events: none;
+            transition: opacity .35s var(--ease);
+        }
+        .lbox.on { opacity: 1; pointer-events: all; }
+        .lbox-wrap { position: relative; }
+        .lbox-img {
+            max-width: 90vw; max-height: 85vh;
+            object-fit: contain; border-radius: 2px;
+            display: block;
+        }
+        .lbox-close {
+            position: fixed; top: 20px; right: 24px;
+            background: none; border: none;
+            color: var(--white); font-size: 34px;
+            cursor: pointer; line-height: 1;
+            opacity: .65; transition: opacity .2s ease-out;
+        }
+        .lbox-close:hover { opacity: 1; }
+        .lbox-nav {
+            position: absolute; top: 50%; transform: translateY(-50%);
+            background: rgba(255,255,255,.12);
+            border: none; color: var(--white);
+            width: 46px; height: 46px; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            cursor: pointer;
+            transition: background .2s ease-out;
+        }
+        .lbox-nav:hover { background: rgba(255,255,255,.28); }
+        .lbox-prev { left: -60px; }
+        .lbox-next { right: -60px; }
+        @media (max-width: 640px) {
+            .lbox-prev { left: 8px; }
+            .lbox-next { right: 8px; }
+        }
+        .lbox-caption {
+            position: absolute; bottom: -36px; left: 0; right: 0;
+            text-align: center;
+            font-size: 12px; color: rgba(255,255,255,.5);
+            letter-spacing: .08em;
+        }
+
+        /* ─── AMENITIES ──────────────────────────────────── */
+        .amen { background: var(--sand-50); }
+        .amen-grid {
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+            gap: 24px;
+        }
+        @media (min-width: 480px) { .amen-grid { grid-template-columns: repeat(3,1fr); } }
+        @media (min-width: 768px) { .amen-grid { grid-template-columns: repeat(4,1fr); } }
+        @media (min-width: 1024px){ .amen-grid { grid-template-columns: repeat(5,1fr); } }
+        .amen-item {
+            display: flex; flex-direction: column;
+            align-items: center; text-align: center;
+            gap: 10px; padding: 22px 12px;
+            border-radius: 3px;
+            transition: all .3s var(--ease);
+        }
+        .amen-item:hover {
+            background: var(--white);
+            box-shadow: 0 4px 28px rgba(0,0,0,.07);
+            transform: translateY(-4px);
+        }
+        .amen-icon { width: 38px; height: 38px; color: var(--ocean-700); }
+        .amen-name {
+            font-size: 12px; font-weight: 500;
+            color: var(--text-dark); letter-spacing: .02em;
+        }
+
+        /* ─── BOOKING ────────────────────────────────────── */
+        .booking { background: var(--cream); }
+        .booking-grid { display: grid; gap: 60px; }
+        @media (min-width: 900px) {
+            .booking-grid {
+                grid-template-columns: 1fr 1.1fr;
+                gap: 80px; align-items: start;
+            }
+        }
+        .book-tag { font-family: var(--ff-serif); font-style: italic; font-size: 14px; color: var(--gold); }
+        .book-h { font-size: clamp(1.7rem,3.5vw,2.4rem); font-weight: 600; margin: 14px 0 16px; }
+        .book-body { font-size: 15px; color: var(--text-mid); line-height: 1.85; margin-bottom: 28px; }
+        .book-pts { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+        .book-pts li {
+            display: flex; align-items: flex-start; gap: 10px;
+            font-size: 14px; color: var(--text-mid);
+        }
+        .book-pts svg { color: var(--gold); flex-shrink: 0; margin-top: 3px; }
+
+        /* Form card */
+        .form-card {
+            background: var(--white);
+            padding: 38px 30px;
+            border-radius: 3px;
+            box-shadow: 0 4px 48px rgba(0,0,0,.08);
+        }
+        .form-card-h { font-family: var(--ff-serif); font-size: 1.5rem; margin-bottom: 6px; }
+        .form-card-sub { font-size: 13px; color: var(--text-lt); margin-bottom: 26px; }
+        .f-row { display: grid; gap: 14px; margin-bottom: 16px; }
+        @media (min-width: 440px) { .f-row { grid-template-columns: 1fr 1fr; } }
+        .f-group { display: flex; flex-direction: column; gap: 6px; }
+        .f-label {
+            font-size: 10px; font-weight: 600;
+            letter-spacing: .12em; text-transform: uppercase;
+            color: var(--text-mid);
+        }
+        .f-input, .f-select, .f-textarea {
+            width: 100%; padding: 12px 14px;
+            border: 1px solid var(--sand-200);
+            border-radius: 2px;
+            font-family: var(--ff-sans);
+            font-size: 14px; font-weight: 300;
+            color: var(--text-dark);
+            background: var(--sand-50);
+            outline: none;
+            transition: border-color .2s ease-out, background .2s ease-out;
+            -webkit-appearance: none;
+        }
+        .f-input:focus, .f-select:focus, .f-textarea:focus {
+            border-color: var(--ocean-700);
+            background: var(--white);
+        }
+        .f-textarea { resize: vertical; min-height: 96px; }
+        .f-submit {
+            width: 100%; padding: 15px;
+            background: var(--ocean-800); color: var(--white);
+            border: none; border-radius: 2px;
+            font-family: var(--ff-sans);
+            font-size: 11px; font-weight: 600;
+            letter-spacing: .18em; text-transform: uppercase;
+            cursor: pointer;
+            transition: all .22s var(--ease);
+            margin-top: 10px;
+        }
+        .f-submit:hover {
+            background: var(--gold);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 28px rgba(201,164,110,.3);
+        }
+        .mb-16 { margin-bottom: 16px; }
+
+        /* Price callout */
+        .price-callout {
+            display: flex; align-items: center; justify-content: space-between;
+            background: var(--ocean-900);
+            border-radius: 3px;
+            padding: 22px 28px;
+            margin-bottom: 28px;
+            gap: 16px;
+        }
+        .price-callout-left { display: flex; flex-direction: column; gap: 2px; }
+        .price-rate {
+            font-family: var(--ff-serif);
+            font-size: clamp(2rem, 4vw, 2.6rem);
+            color: var(--white);
+            line-height: 1;
+        }
+        .price-rate sup { font-size: .55em; vertical-align: super; }
+        .price-note { font-size: 11px; color: rgba(255,255,255,.55); letter-spacing: .12em; text-transform: uppercase; margin-top: 6px; }
+        .price-min {
+            display: flex; flex-direction: column; align-items: flex-end; gap: 4px;
+            border-left: 1px solid rgba(255,255,255,.15); padding-left: 24px;
+        }
+        .price-min-num { font-family: var(--ff-serif); font-size: 1.6rem; color: var(--gold); line-height: 1; }
+        .price-min-label { font-size: 10px; color: rgba(255,255,255,.5); letter-spacing: .1em; text-transform: uppercase; }
+
+        /* Live cost summary inside form */
+        .cost-summary {
+            background: var(--sand-50);
+            border: 1px solid var(--sand-200);
+            border-radius: 2px;
+            padding: 14px 16px;
+            margin-bottom: 16px;
+            display: none;
+        }
+        .cost-summary.show { display: block; }
+        .cost-row { display: flex; justify-content: space-between; font-size: 13px; color: var(--text-mid); margin-bottom: 5px; }
+        .cost-total { display: flex; justify-content: space-between; font-size: 14px; font-weight: 600; color: var(--ocean-900); border-top: 1px solid var(--sand-200); padding-top: 10px; margin-top: 8px; }
+        .cost-warn { font-size: 11px; color: #b94040; margin-top: 8px; }
+
+        /* ─── CONTACT ────────────────────────────────────── */
+        .contact-s { background: var(--ocean-900); }
+        .contact-grid { display: grid; gap: 48px; }
+        @media (min-width: 768px) { .contact-grid { grid-template-columns: 1fr 1fr; gap: 80px; } }
+        .contact-s .h-display { color: var(--white); }
+        .contact-sub { font-size: 15px; color: rgba(255,255,255,.6); margin: 16px 0 36px; line-height: 1.85; }
+        .c-items { display: flex; flex-direction: column; gap: 22px; }
+        .c-item { display: flex; align-items: center; gap: 16px; }
+        .c-icon {
+            width: 44px; height: 44px; border-radius: 50%;
+            border: 1px solid rgba(201,164,110,.3);
+            display: flex; align-items: center; justify-content: center;
+            color: var(--gold); flex-shrink: 0;
+        }
+        .c-lbl {
+            font-size: 10px; font-weight: 600;
+            letter-spacing: .14em; text-transform: uppercase;
+            color: var(--gold); margin-bottom: 4px;
+        }
+        .c-val { font-size: 14px; color: var(--white); }
+        .c-val a { color: var(--white); transition: color .2s ease-out; }
+        .c-val a:hover { color: var(--gold); }
+
+        .map-card {
+            aspect-ratio: 4/3;
+            background: rgba(255,255,255,.04);
+            border: 1px solid rgba(255,255,255,.08);
+            border-radius: 3px;
+            display: flex; flex-direction: column;
+            align-items: center; justify-content: center;
+            gap: 16px; text-align: center; padding: 32px;
+        }
+        .map-card p { font-size: 14px; color: rgba(255,255,255,.58); line-height: 1.75; }
+        .map-card strong { color: var(--white); }
+        .map-card small { color: rgba(255,255,255,.35); }
+
+        /* ─── FOOTER ──────────────────────────────────────── */
+        .footer {
+            background: #070f18;
+            padding: 52px 24px 28px;
+        }
+        .footer-in { max-width: 1280px; margin: 0 auto; }
+        .footer-top {
+            display: flex; flex-direction: column; gap: 28px;
+            margin-bottom: 36px;
+        }
+        @media (min-width: 768px) {
+            .footer-top { flex-direction: row; justify-content: space-between; align-items: flex-start; }
+        }
+        .footer-brand { font-family: var(--ff-serif); font-size: 1.4rem; color: var(--white); margin-bottom: 6px; }
+        .footer-loc { font-size: 11px; color: rgba(255,255,255,.35); letter-spacing: .1em; }
+        .footer-nav { display: flex; gap: 24px; flex-wrap: wrap; list-style: none; }
+        .footer-nav a { font-size: 12px; color: rgba(255,255,255,.4); transition: color .2s ease-out; }
+        .footer-nav a:hover { color: var(--gold); }
+        .footer-rule { width: 100%; height: 1px; background: rgba(255,255,255,.06); margin-bottom: 22px; }
+        .footer-bottom {
+            display: flex; flex-direction: column; gap: 8px;
+            align-items: center; text-align: center;
+            font-size: 12px; color: rgba(255,255,255,.28);
+        }
+        @media (min-width: 768px) {
+            .footer-bottom { flex-direction: row; justify-content: space-between; text-align: left; }
+        }
+
+        /* ─── WHATSAPP FAB ───────────────────────────────── */
+        .wa-fab {
+            position: fixed; bottom: 24px; right: 24px; z-index: 500;
+            width: 56px; height: 56px;
+            background: #25d366; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            box-shadow: 0 4px 22px rgba(37,211,102,.42);
+            transition: all .22s var(--ease);
+        }
+        .wa-fab:hover { transform: scale(1.12); box-shadow: 0 8px 36px rgba(37,211,102,.55); }
+        .wa-fab svg { width: 28px; height: 28px; fill: var(--white); }
+
+        /* ─── SCROLL ANIMATIONS ──────────────────────────── */
+        .fu {
+            opacity: 0;
+            transform: translateY(36px);
+            transition: opacity .75s var(--ease), transform .75s var(--ease);
+        }
+        .fi {
+            opacity: 0;
+            transition: opacity .8s var(--ease);
+        }
+        .fu.vis, .fi.vis { opacity: 1; transform: translateY(0); }
+        .d1 { transition-delay: .08s; }
+        .d2 { transition-delay: .18s; }
+        .d3 { transition-delay: .28s; }
+        .d4 { transition-delay: .38s; }
+        .d5 { transition-delay: .48s; }
+        .d6 { transition-delay: .58s; }
+
+        /* Gold shimmer rule */
+        .gold-rule {
+            position: relative; overflow: hidden;
+        }
+        .gold-rule::after {
+            content: '';
+            position: absolute; inset: 0;
+            background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,.7) 50%, transparent 100%);
+            background-size: 200% 100%;
+            animation: shimmer 2.4s ease-in-out infinite;
+        }
+        @keyframes shimmer {
+            0%   { background-position: -200% center; }
+            100% { background-position: 200% center; }
+        }
+
+        /* Dark outline on all accent-blue text */
+        .hero-h1 em,
+        .book-tag,
+        .stat-n,
+        .price-min-num,
+        .label,
+        .resort .label,
+        .c-lbl {
+            -webkit-text-stroke: 0.6px rgba(5,25,60,.45);
+            paint-order: stroke fill;
+        }
+
+        /* Floating WhatsApp button */
+        .wa-fab { animation: waDrift 90s ease-in-out infinite; }
+        @keyframes waDrift {
+            0%   { transform: translate(0,     0);    }
+            25%  { transform: translate(1px,  -1.5px); }
+            50%  { transform: translate(0,    -2.5px); }
+            75%  { transform: translate(-1px, -1.5px); }
+            100% { transform: translate(0,     0);    }
+        }
+        .wa-fab:hover { animation: none; transform: scale(1.12); }
+
+        /* Stat number pop */
+        .stat-n {
+            transition: color .3s ease-out;
+        }
+        .stat.vis .stat-n { color: var(--gold-lt); }
+
+        /* Resort card stagger reveal */
+        .resort-card {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity .65s var(--ease), transform .65s var(--ease), border-color .3s ease-out, background .3s ease-out;
+        }
+        .resort-card.vis {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ─── KEYFRAMES ──────────────────────────────────── */
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(22px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to   { opacity: 1; }
+        }
+        @keyframes scrollPulse {
+            0%,100% { opacity: .55; transform: scaleY(1); }
+            50%     { opacity: 1;   transform: scaleY(1.3) translateY(-4px); }
+        }
+        @keyframes pulseGold {
+            0%,100% { box-shadow: 0 0 0 0 rgba(201,164,110,0); }
+            50%      { box-shadow: 0 0 0 8px rgba(201,164,110,.15); }
+        }
+
+        /* ─── REDUCED MOTION ──────────────────────────────── */
+        /* ─── MOBILE FIRST OVERRIDES (≤ 640px) ──────────── */
+        @media (max-width: 640px) {
+            /* Body */
+            body { font-size: 16px; }
+            .body-copy { font-size: 16px; }
+            .contact-sub { font-size: 16px; }
+
+            /* Section spacing */
+            .section { padding: 60px 0; }
+            .container { padding: 0 20px; }
+
+            /* Hero badge — prevent wrapping */
+            .hero-badge-text {
+                font-size: 9px;
+                letter-spacing: .18em;
+                white-space: nowrap;
+            }
+            .hero-badge-line { width: 20px; }
+
+            /* Hero CTAs — stack vertically, full width */
+            .hero-ctas {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 12px;
+                padding: 0 24px;
+            }
+            .hero-ctas .btn {
+                width: 100%;
+                text-align: center;
+                padding: 18px 24px;
+                font-size: 12px;
+            }
+
+            /* Section headings */
+            .h-display { font-size: clamp(1.7rem, 7vw, 2.4rem); }
+            .story-h   { font-size: clamp(1.6rem, 6.5vw, 2.2rem); }
+
+            /* Stats strip */
+            .stat-n { font-size: 2rem; }
+
+            /* Contact section — prevent text overflow */
+            .contact-s .container { overflow: hidden; }
+            .contact-sub, .c-val, .c-val a { overflow-wrap: break-word; word-break: break-word; max-width: 100%; }
+            .contact-grid { display: block; }
+            .map-card { display: none; }
+
+            /* Resort cards — single column */
+            .resort-grid { grid-template-columns: 1fr; }
+
+            /* Amenities label */
+            .amen-lbl { font-size: 10px; }
+
+            /* Quote text */
+            .quote-text { font-size: clamp(1.1rem, 4.5vw, 1.6rem); padding: 0 8px; }
+
+            /* Booking form */
+            .book-h { font-size: clamp(1.4rem, 5.5vw, 2rem); }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: .01ms !important;
+                transition-duration: .01ms !important;
+            }
+            .fu, .fi { opacity: 1; transform: none; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ====================================================
+     NAVIGATION
+===================================================== -->
+<nav class="nav" id="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner">
+        <a href="#home" class="nav-logo" aria-label="Dominion Beach House home">
+            <span class="nav-logo-name">Dominion Beach</span>
+            <span class="nav-logo-loc">Estepona · Costa del Sol</span>
+        </a>
+
+        <ul class="nav-links" role="list">
+            <li><a href="#property">The Home</a></li>
+            <li><a href="#resort">Resort</a></li>
+            <li><a href="#property">Gallery</a></li>
+            <li><a href="#amenities">Amenities</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+
+        <button class="burger" id="burger" aria-label="Open navigation menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+</nav>
+
+<!-- Mobile drawer -->
+<div class="drawer" id="drawer" role="dialog" aria-modal="true" aria-label="Navigation menu">
+    <button class="drawer-close" id="drawerClose" aria-label="Close menu">×</button>
+    <a href="#property"  class="dl">The Home</a>
+    <a href="#resort"    class="dl">The Resort</a>
+    <a href="#property"   class="dl">Gallery</a>
+    <a href="#amenities" class="dl">Amenities</a>
+    <a href="#booking"   class="dl">Book Now</a>
+    <a href="#contact"   class="dl">Contact</a>
+</div>
+
+
+<!-- ====================================================
+     HERO
+===================================================== -->
+<section class="hero" id="home" aria-label="Luxury beachfront holiday home in Estepona">
+    <div class="hero-bg" id="heroBg" aria-hidden="true">
+        <!--
+        ✏️  TO ADD YOUR HERO PHOTO:
+        1. Put your best beach / exterior photo in the images/ folder (e.g. images/hero.jpg)
+        2. Replace the background property in .hero-bg with:
+           url('images/hero.jpg') center / cover no-repeat
+        -->
+    </div>
+
+    <div class="hero-content">
+        <div class="hero-badge">
+            <span class="hero-badge-line" aria-hidden="true"></span>
+            <span class="hero-badge-text">Dominion Beach · New Golden Mile · Estepona</span>
+            <span class="hero-badge-line" aria-hidden="true"></span>
+        </div>
+
+        <h1 class="hero-h1">
+            Luxury Beachfront<br>
+            <em>Living in Estepona</em>
+        </h1>
+
+        <p class="hero-sub">An exclusive retreat on the shores of the Costa del Sol</p>
+
+        <div class="hero-ctas">
+            <a href="#booking" class="btn btn-gold">Book Now</a>
+            <a href="#property" class="btn btn-ghost">View Home</a>
+        </div>
+    </div>
+
+    <div class="hero-scroll" aria-hidden="true">
+        <div class="scroll-bar"></div>
+        <span>Scroll</span>
+    </div>
+</section>
+
+
+<!-- ====================================================
+     STATS STRIP
+===================================================== -->
+<div class="strip" aria-label="Key features">
+    <div class="strip-grid">
+        <div class="stat fu d1"><div class="stat-n">2</div><div class="stat-l">Swimming Pools</div></div>
+        <div class="stat fu d2"><div class="stat-n">0m</div><div class="stat-l">From the Beach</div></div>
+        <div class="stat fu d3"><div class="stat-n">5★</div><div class="stat-l">Resort Amenities</div></div>
+        <div class="stat fu d4"><div class="stat-n">24/7</div><div class="stat-l">Gated Security</div></div>
+    </div>
+</div>
+
+
+<!-- ====================================================
+     STORY
+===================================================== -->
+<section class="section story" id="about">
+    <div class="container">
+        <div class="story-grid">
+            <div class="img-wrap fi">
+                <!--
+                ✏️  REPLACE with: <img src="images/bedroom.jpg" alt="Master bedroom with garden terrace view" class="img-fill">
+                -->
+                <img src="images/bedroom.jpg" alt="Master bedroom with terrace view" class="img-fill" id="storyImg">
+                <div class="img-accent" aria-hidden="true"></div>
+            </div>
+
+            <div>
+                <p class="story-tag fu">A place apart</p>
+                <h2 class="story-h fu d1">
+                    Where the Mediterranean<br>becomes your backyard
+                </h2>
+                <div class="gold-rule fu d2"></div>
+                <p class="body-copy fu d3">
+                    Nestled within the exclusive gated community of Dominion Beach on Estepona's prestigious New Golden Mile, this beautifully appointed home offers a rare combination of direct beach access, resort-style amenities, and the serene privacy of one of the Costa del Sol's most sought-after addresses.
+                </p>
+                <p class="body-copy fu d4" style="margin-top:16px;">
+                    Steps from the beach, immersed in the exclusive Dominion Beach community. Spend your mornings by the pool or strolling to the shore, and dine beneath the stars at the resort's beachfront restaurant. This is not just a holiday rental — it is a lifestyle experience.
+                </p>
+                <ul class="bullets">
+                    <li class="fu d3"><span class="dot" aria-hidden="true"></span>Directly on the beachfront promenade</li>
+                    <li class="fu d4"><span class="dot" aria-hidden="true"></span>Exclusive gated resort with 24/7 security</li>
+                    <li class="fu d4"><span class="dot" aria-hidden="true"></span>Sleeps up to 6 guests in comfort</li>
+                    <li class="fu d5"><span class="dot" aria-hidden="true"></span>Premium finishes and full equipment throughout</li>
+                    <li class="fu d5"><span class="dot" aria-hidden="true"></span>Private terrace with garden and outdoor dining</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- ====================================================
+     PROPERTY CARDS
+===================================================== -->
+<section class="section prop" id="property">
+    <div class="container">
+        <div class="section-head">
+            <span class="label fu">The Home</span>
+            <h2 class="h-display fu d1">Every detail,<br>thoughtfully considered</h2>
+            <div class="gold-rule center fu d2"></div>
+            <p class="body-copy fu d3" style="max-width:580px;margin:0 auto;text-align:center;">
+                A fully furnished retreat combining timeless Mediterranean elegance with every modern comfort.
+            </p>
+        </div>
+
+        <div class="prop-grid">
+            <div class="prop-card fi d1" data-slot="home_terrace">
+                <img src="images/terrace.jpg" alt="Private terrace with mosaic dining table and lush garden" class="prop-card-img">
+                <div class="prop-card-cap"><span>Private Terrace &amp; Garden</span></div>
+            </div>
+            <div class="prop-card fi d2" data-slot="home_bedroom">
+                <img src="images/bedroom.jpg" alt="Bright master suite with sliding terrace doors" class="prop-card-img">
+                <div class="prop-card-cap"><span>Master Suite</span></div>
+            </div>
+            <div class="prop-card fi d3" data-slot="home_kitchen">
+                <img src="images/kitchen.jpg" alt="Modern kitchen with garden view window" class="prop-card-img">
+                <div class="prop-card-cap"><span>Fully Equipped Kitchen</span></div>
+            </div>
+            <div class="prop-card fi d4" data-slot="home_bathroom">
+                <img src="images/bathroom.jpg" alt="Marble en-suite bathroom with bath and double sinks" class="prop-card-img">
+                <div class="prop-card-cap"><span>En-Suite Marble Bathroom</span></div>
+            </div>
+            <div class="prop-card fi d1" data-slot="home_living">
+                <div class="ph"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg><span>Add Photo</span></div>
+                <div class="prop-card-cap"><span>Living Room</span></div>
+            </div>
+            <div class="prop-card fi d2" data-slot="home_lounge">
+                <div class="ph"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg><span>Add Photo</span></div>
+                <div class="prop-card-cap"><span>Lounge &amp; Dining</span></div>
+            </div>
+            <div class="prop-card fi d3" data-slot="home_seaview">
+                <div class="ph"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg><span>Add Photo</span></div>
+                <div class="prop-card-cap"><span>Sea View</span></div>
+            </div>
+            <div class="prop-card fi d4" data-slot="home_exterior">
+                <div class="ph"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg><span>Add Photo</span></div>
+                <div class="prop-card-cap"><span>Exterior &amp; Entrance</span></div>
+            </div>
+        </div>
+
+        <!-- Resort gallery sub-section -->
+        <div id="gallery" style="margin-top:72px;">
+            <div class="section-head" style="margin-bottom:40px;">
+                <span class="label fu">The Resort</span>
+                <h3 class="h-display fu d1" style="font-size:clamp(1.6rem,3.5vw,2.4rem);">A visual journey</h3>
+                <div class="gold-rule center fu d2"></div>
+            </div>
+
+            <div class="gallery-grid" id="galleryGrid">
+
+                <!-- ✏️ REPLACE: add images/resort1.jpg, update data-src and data-cap -->
+                <div class="g-item span2 fi d1" data-src="" data-cap="Resort Photo 1" data-slot="resort_1">
+                    <div class="ph">
+                        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+                        <span>Add Resort Photo</span>
+                    </div>
+                    <div class="g-overlay" aria-hidden="true">
+                        <svg class="g-zoom" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/><path d="M11 8v6M8 11h6"/></svg>
+                    </div>
+                </div>
+
+                <!-- ✏️ REPLACE: add images/resort2.jpg, update data-src and data-cap -->
+                <div class="g-item fi d2" data-src="" data-cap="Resort Photo 2" data-slot="resort_2">
+                    <div class="ph">
+                        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+                        <span>Add Resort Photo</span>
+                    </div>
+                    <div class="g-overlay" aria-hidden="true">
+                        <svg class="g-zoom" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/><path d="M11 8v6M8 11h6"/></svg>
+                    </div>
+                </div>
+
+                <!-- ✏️ REPLACE: add images/resort3.jpg, update data-src and data-cap -->
+                <div class="g-item fi d3" data-src="" data-cap="Resort Photo 3" data-slot="resort_3">
+                    <div class="ph">
+                        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+                        <span>Add Resort Photo</span>
+                    </div>
+                    <div class="g-overlay" aria-hidden="true">
+                        <svg class="g-zoom" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/><path d="M11 8v6M8 11h6"/></svg>
+                    </div>
+                </div>
+
+                <!-- ✏️ REPLACE: add images/resort4.jpg, update data-src and data-cap -->
+                <div class="g-item span2 fi d2" data-src="" data-cap="Resort Photo 4" data-slot="resort_4">
+                    <div class="ph">
+                        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+                        <span>Add Resort Photo</span>
+                    </div>
+                    <div class="g-overlay" aria-hidden="true">
+                        <svg class="g-zoom" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/><path d="M11 8v6M8 11h6"/></svg>
+                    </div>
+                </div>
+
+                <!-- ✏️ REPLACE: add images/resort5.jpg, update data-src and data-cap -->
+                <div class="g-item fi d3" data-src="" data-cap="Resort Photo 5" data-slot="resort_5">
+                    <div class="ph">
+                        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+                        <span>Add Resort Photo</span>
+                    </div>
+                    <div class="g-overlay" aria-hidden="true">
+                        <svg class="g-zoom" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/><path d="M11 8v6M8 11h6"/></svg>
+                    </div>
+                </div>
+
+                <!-- ✏️ REPLACE: add images/resort6.jpg, update data-src and data-cap -->
+                <div class="g-item fi d4" data-src="" data-cap="Resort Photo 6" data-slot="resort_6">
+                    <div class="ph">
+                        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+                        <span>Add Resort Photo</span>
+                    </div>
+                    <div class="g-overlay" aria-hidden="true">
+                        <svg class="g-zoom" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/><path d="M11 8v6M8 11h6"/></svg>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- ====================================================
+     QUOTE BANNER
+===================================================== -->
+<div class="quote-banner">
+    <blockquote>
+        <p class="quote-text fu">
+            "Step outside, and the Mediterranean stretches endlessly before you — the beach at your doorstep, golden Andalucían light all around."
+        </p>
+        <footer class="quote-attr fu d2">Dominion Beach · New Golden Mile · Estepona</footer>
+    </blockquote>
+</div>
+
+
+<!-- ====================================================
+     RESORT
+===================================================== -->
+<section class="section resort" id="resort">
+    <div class="container resort-inner">
+        <div class="section-head text-center">
+            <span class="label fu">The Community</span>
+            <h2 class="h-display fu d1">Resort living,<br>redefined</h2>
+            <div class="gold-rule center fu d2"></div>
+            <p class="body-copy fu d3" style="max-width:600px;margin:0 auto;">
+                Dominion Beach is one of Estepona's most exclusive beachfront communities — a private, gated paradise with every amenity, steps from the sea.
+            </p>
+        </div>
+
+        <div class="resort-cards">
+
+            <div class="resort-card d1">
+                <svg class="r-icon" viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" aria-hidden="true">
+                    <path d="M22 8C14 8 8 14 8 22s8 18 14 18"/><path d="M22 8c8 0 14 6 14 14s-6 14-14 14"/>
+                    <path d="M6 22h32"/><path d="M22 8v28"/>
+                    <path d="M6 30c4 2 10 4 16 4s12-2 16-4"/>
+                </svg>
+                <div class="r-title">Direct Beach Access</div>
+                <p class="r-body">Step from the community garden directly onto a beautiful, quiet stretch of Mediterranean beach. Sun loungers and shade await just steps away.</p>
+            </div>
+
+            <div class="resort-card d2">
+                <svg class="r-icon" viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" aria-hidden="true">
+                    <rect x="6" y="22" width="32" height="14" rx="2"/>
+                    <path d="M6 22c0-8 4-14 16-14s16 6 16 14"/>
+                    <path d="M6 28h32"/><path d="M14 22v8"/><path d="M22 22v8"/><path d="M30 22v8"/>
+                </svg>
+                <div class="r-title">Two Swimming Pools</div>
+                <p class="r-body">Two large, beautifully maintained pools set within lush tropical gardens — perfect for morning laps or long, lazy afternoons in the Andalucían sun.</p>
+            </div>
+
+            <div class="resort-card d3">
+                <svg class="r-icon" viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" aria-hidden="true">
+                    <path d="M10 36L12 16l10-4 10 4 2 20"/><rect x="17" y="24" width="10" height="12" rx="1"/>
+                    <path d="M14 10L22 6l8 4"/>
+                </svg>
+                <div class="r-title">Beachfront Restaurant</div>
+                <p class="r-body">An exclusive residents-only restaurant right on the water's edge. Fresh Mediterranean cuisine, sea views, and impeccable service.</p>
+            </div>
+
+            <div class="resort-card d1">
+                <svg class="r-icon" viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" aria-hidden="true">
+                    <rect x="8" y="10" width="12" height="24" rx="1"/>
+                    <rect x="24" y="16" width="12" height="18" rx="1"/>
+                    <path d="M14 10V8"/><path d="M30 16V14"/>
+                    <circle cx="14" cy="18" r="2"/><path d="M8 34h28"/>
+                </svg>
+                <div class="r-title">Fitness Centre</div>
+                <p class="r-body">A fully equipped gym within the resort. Start your morning with a workout, then head to the beach — the ultimate healthy holiday routine.</p>
+            </div>
+
+            <div class="resort-card d2">
+                <svg class="r-icon" viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" aria-hidden="true">
+                    <path d="M6 22C6 22 10 34 22 34s16-12 16-12"/>
+                    <path d="M6 22C6 22 10 10 22 10s16 12 16 12"/>
+                    <path d="M22 10v24"/><path d="M6 22h32"/><circle cx="22" cy="22" r="3"/>
+                </svg>
+                <div class="r-title">Coastal Promenade</div>
+                <p class="r-body">A scenic path running directly alongside the property — perfect for morning runs or relaxed evening strolls as the sun sets over the sea.</p>
+            </div>
+
+            <div class="resort-card d3">
+                <svg class="r-icon" viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" aria-hidden="true">
+                    <path d="M22 8L24.5 16H32L26 21l2.5 8L22 24l-6.5 5 2.5-8-6-5h7.5L22 8Z"/>
+                    <path d="M8 36h28"/><path d="M14 32l-4 4"/><path d="M30 32l4 4"/>
+                </svg>
+                <div class="r-title">24/7 Gated Security</div>
+                <p class="r-body">Peace of mind comes as standard within this fully secured community. Relax completely, knowing you are in one of Estepona's most exclusive enclaves.</p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- ====================================================
+     GALLERY
+===================================================== -->
+
+<!-- Lightbox -->
+<div class="lbox" id="lbox" role="dialog" aria-modal="true" aria-label="Photo viewer">
+    <button class="lbox-close" id="lboxClose" aria-label="Close photo viewer">×</button>
+    <div class="lbox-wrap">
+        <div id="lboxContent" style="width:min(88vw,860px);height:min(82vh,640px);background:#111;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.35);font-size:13px;border-radius:2px;letter-spacing:.06em;">
+            Add your images to see them here
+        </div>
+        <p class="lbox-caption" id="lboxCap" aria-live="polite"></p>
+        <button class="lbox-nav lbox-prev" id="lboxPrev" aria-label="Previous photo">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg>
+        </button>
+        <button class="lbox-nav lbox-next" id="lboxNext" aria-label="Next photo">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
+    </div>
+</div>
+
+
+<!-- ====================================================
+     AMENITIES
+===================================================== -->
+<section class="section amen" id="amenities">
+    <div class="container">
+        <div class="section-head text-center">
+            <span class="label fu">What's Included</span>
+            <h2 class="h-display fu d1">Every comfort,<br>every convenience</h2>
+            <div class="gold-rule center fu d2"></div>
+        </div>
+
+        <div class="amen-grid">
+
+            <div class="amen-item fu d1">
+                <svg class="amen-icon" viewBox="0 0 38 38" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" aria-hidden="true">
+                    <path d="M7 30C7 30 9 22 19 22s12 8 12 8"/><circle cx="19" cy="12" r="6"/><path d="M3 34h32"/>
+                </svg>
+                <span class="amen-name">Beach Access</span>
+            </div>
+
+            <div class="amen-item fu d2">
+                <svg class="amen-icon" viewBox="0 0 38 38" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" aria-hidden="true">
+                    <rect x="4" y="18" width="30" height="14" rx="2"/>
+                    <path d="M4 18c0-8 4-12 15-12s15 4 15 12"/>
+                    <path d="M4 24h30"/>
+                </svg>
+                <span class="amen-name">2 Pools</span>
+            </div>
+
+            <div class="amen-item fu d3">
+                <svg class="amen-icon" viewBox="0 0 38 38" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" aria-hidden="true">
+                    <rect x="6" y="8" width="10" height="22" rx="1"/><rect x="22" y="14" width="10" height="16" rx="1"/>
+                    <path d="M11 8V6"/><path d="M27 14V12"/>
+                    <circle cx="11" cy="16" r="2"/><path d="M4 30h30"/>
+                </svg>
+                <span class="amen-name">Fitness Centre</span>
+            </div>
+
+            <div class="amen-item fu d4">
+                <svg class="amen-icon" viewBox="0 0 38 38" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" aria-hidden="true">
+                    <path d="M8 30L10 10l9-4 9 4 2 20"/><path d="M6 30h26"/><rect x="15" y="20" width="8" height="10" rx="1"/>
+                </svg>
+                <span class="amen-name">Beachfront Restaurant</span>
+            </div>
+
+            <div class="amen-item fu d5">
+                <svg class="amen-icon" viewBox="0 0 38 38" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" aria-hidden="true">
+                    <path d="M6 22h26"/><path d="M9 22v8"/><path d="M29 22v8"/><path d="M6 30h26"/>
+                    <path d="M9 18c0-4 4-8 10-8s10 4 10 8"/>
+                    <circle cx="19" cy="6" r="2"/>
+                </svg>
+                <span class="amen-name">Sun Loungers</span>
+            </div>
+
+            <div class="amen-item fu d1">
+                <svg class="amen-icon" viewBox="0 0 38 38" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" aria-hidden="true">
+                    <rect x="4" y="9" width="30" height="20" rx="2"/>
+                    <path d="M4 15h30"/><path d="M12 29v4"/><path d="M26 29v4"/><path d="M8 33h22"/>
+                </svg>
+                <span class="amen-name">Air Conditioning</span>
+            </div>
+
+            <div class="amen-item fu d2">
+                <svg class="amen-icon" viewBox="0 0 38 38" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" aria-hidden="true">
+                    <rect x="6" y="13" width="26" height="16" rx="2"/>
+                    <path d="M10 29v4"/><path d="M28 29v4"/>
+                    <path d="M6 20h26"/>
+                    <circle cx="12" cy="24" r="2"/>
+                    <path d="M20 16V10l-4 2 4 2 4-2-4-2"/>
+                </svg>
+                <span class="amen-name">Equipped Kitchen</span>
+            </div>
+
+            <div class="amen-item fu d3">
+                <svg class="amen-icon" viewBox="0 0 38 38" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" aria-hidden="true">
+                    <path d="M8 32L10 16l9-4 9 4 2 16"/>
+                    <path d="M15 22v10"/><path d="M23 22v10"/>
+                    <path d="M12 10L19 6l7 4"/>
+                </svg>
+                <span class="amen-name">Private Terrace</span>
+            </div>
+
+            <div class="amen-item fu d4">
+                <svg class="amen-icon" viewBox="0 0 38 38" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" aria-hidden="true">
+                    <rect x="6" y="10" width="18" height="22" rx="2"/>
+                    <circle cx="15" cy="21" r="5"/>
+                    <circle cx="15" cy="21" r="2"/>
+                    <path d="M24 16h8v18h-8"/>
+                    <path d="M28 16V10"/>
+                </svg>
+                <span class="amen-name">Washer &amp; Dryer</span>
+            </div>
+
+            <div class="amen-item fu d5">
+                <svg class="amen-icon" viewBox="0 0 38 38" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" aria-hidden="true">
+                    <circle cx="19" cy="19" r="13"/>
+                    <path d="M6 19h26"/><path d="M19 6c0 0-6 6-6 13s6 13 6 13"/>
+                    <path d="M19 6c0 0 6 6 6 13s-6 13-6 13"/>
+                </svg>
+                <span class="amen-name">Free Wi-Fi</span>
+            </div>
+
+            <div class="amen-item fu d1">
+                <svg class="amen-icon" viewBox="0 0 38 38" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" aria-hidden="true">
+                    <path d="M19 5C11 5 5 11 5 19v12l14 5 14-5V19C33 11 27 5 19 5Z"/>
+                    <path d="M13 20l4 4 8-8"/>
+                </svg>
+                <span class="amen-name">Gated Community</span>
+            </div>
+
+            <div class="amen-item fu d2">
+                <svg class="amen-icon" viewBox="0 0 38 38" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" aria-hidden="true">
+                    <path d="M5 29c5-8 8-10 14-10s9 2 14 10"/>
+                    <circle cx="19" cy="10" r="5"/>
+                    <path d="M3 33h32"/>
+                </svg>
+                <span class="amen-name">Coastal Promenade</span>
+            </div>
+
+            <div class="amen-item fu d3">
+                <svg class="amen-icon" viewBox="0 0 38 38" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" aria-hidden="true">
+                    <rect x="4" y="8" width="30" height="20" rx="2"/>
+                    <path d="M12 28v4"/><path d="M26 28v4"/><path d="M8 32h22"/>
+                    <circle cx="19" cy="18" r="4"/>
+                </svg>
+                <span class="amen-name">Smart TV</span>
+            </div>
+
+            <div class="amen-item fu d4">
+                <svg class="amen-icon" viewBox="0 0 38 38" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" aria-hidden="true">
+                    <path d="M7 32L10 8l9-4 9 4 3 24"/><path d="M5 32h28"/>
+                    <path d="M15 22h8v10h-8z"/>
+                </svg>
+                <span class="amen-name">Linen &amp; Towels</span>
+            </div>
+
+            <div class="amen-item fu d5">
+                <svg class="amen-icon" viewBox="0 0 38 38" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" aria-hidden="true">
+                    <circle cx="19" cy="19" r="14"/>
+                    <path d="M19 9v10l6 6"/>
+                </svg>
+                <span class="amen-name">Flexible Check-in</span>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- ====================================================
+     BOOKING
+===================================================== -->
+<section class="section booking" id="booking">
+    <div class="container">
+        <div class="booking-grid">
+            <!-- Left column -->
+            <div>
+                <p class="book-tag fu">Reserve Your Stay</p>
+                <h2 class="book-h fu d1">Your Mediterranean<br>escape awaits</h2>
+                <div class="gold-rule fu d2"></div>
+                <p class="book-body fu d3">
+                    Whether you're planning a romantic getaway, a family holiday, or a longer stay in the sun, we'd love to help you experience Dominion Beach at its finest. Get in touch and we'll respond within 24 hours.
+                </p>
+                <div class="price-callout fu d2">
+                    <div class="price-callout-left">
+                        <div class="price-rate"><sup>€</sup>500</div>
+                        <div class="price-note">per night · direct booking</div>
+                    </div>
+                    <div class="price-min">
+                        <div class="price-min-num">6</div>
+                        <div class="price-min-label">night minimum</div>
+                    </div>
+                </div>
+
+                <ul class="book-pts">
+                    <li class="fu d3">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M2 8l4 4 8-8"/></svg>
+                        Minimum stay: 6 nights
+                    </li>
+                    <li class="fu d3">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M2 8l4 4 8-8"/></svg>
+                        Flexible check-in &amp; check-out
+                    </li>
+                    <li class="fu d4">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M2 8l4 4 8-8"/></svg>
+                        Professional welcome &amp; orientation
+                    </li>
+                    <li class="fu d4">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M2 8l4 4 8-8"/></svg>
+                        Direct booking — no platform fees
+                    </li>
+                    <li class="fu d5">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M2 8l4 4 8-8"/></svg>
+                        Response within 24 hours
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Right column: form -->
+            <div class="form-card fu d2">
+                <h3 class="form-card-h">Send an Enquiry</h3>
+                <p class="form-card-sub">We'll reply with availability and rates within 24 hours.</p>
+
+                <form id="bookingForm" action="mailto:dominionbeachhouse@icloud.com" method="POST" enctype="text/plain">
+
+                    <div class="f-row">
+                        <div class="f-group">
+                            <label class="f-label" for="fname">First Name <span aria-label="required">*</span></label>
+                            <input class="f-input" type="text" id="fname" name="First Name" required placeholder="Maria" autocomplete="given-name">
+                        </div>
+                        <div class="f-group">
+                            <label class="f-label" for="lname">Last Name <span aria-label="required">*</span></label>
+                            <input class="f-input" type="text" id="lname" name="Last Name" required placeholder="García" autocomplete="family-name">
+                        </div>
+                    </div>
+
+                    <div class="f-group mb-16">
+                        <label class="f-label" for="email">Email Address <span aria-label="required">*</span></label>
+                        <input class="f-input" type="email" id="email" name="Email" required placeholder="maria@example.com" autocomplete="email">
+                    </div>
+
+                    <div class="f-group mb-16">
+                        <label class="f-label" for="phone">Phone / WhatsApp</label>
+                        <input class="f-input" type="tel" id="phone" name="Phone" placeholder="+34 600 000 000" autocomplete="tel">
+                    </div>
+
+                    <div class="f-row">
+                        <div class="f-group">
+                            <label class="f-label" for="checkin">Check-in <span aria-label="required">*</span></label>
+                            <input class="f-input" type="date" id="checkin" name="Check-in" required>
+                        </div>
+                        <div class="f-group">
+                            <label class="f-label" for="checkout">Check-out <span aria-label="required">*</span></label>
+                            <input class="f-input" type="date" id="checkout" name="Check-out" required>
+                        </div>
+                    </div>
+
+                    <div class="cost-summary" id="costSummary">
+                        <div class="cost-row"><span>Rate</span><span>€500 / night</span></div>
+                        <div class="cost-row"><span id="costNights">— nights</span><span id="costSub">—</span></div>
+                        <div class="cost-total"><span>Estimated total</span><span id="costTotal">—</span></div>
+                        <div class="cost-warn" id="costWarn" style="display:none"></div>
+                    </div>
+
+                    <div class="f-group mb-16">
+                        <label class="f-label" for="guests">Number of Guests <span aria-label="required">*</span></label>
+                        <select class="f-select" id="guests" name="Guests" required>
+                            <option value="" disabled selected>Select guests</option>
+                            <option value="1 guest">1 guest</option>
+                            <option value="2 guests">2 guests</option>
+                            <option value="3 guests">3 guests</option>
+                            <option value="4 guests">4 guests</option>
+                            <option value="5 guests">5 guests</option>
+                            <option value="6 guests">6 guests</option>
+                        </select>
+                    </div>
+
+                    <div class="f-group mb-16">
+                        <label class="f-label" for="message">Message</label>
+                        <textarea class="f-textarea" id="message" name="Message" placeholder="Tell us about your trip, any special requests, or questions you have…"></textarea>
+                    </div>
+
+                    <button type="submit" class="f-submit" id="formSubmit">Send Enquiry</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- ====================================================
+     CONTACT
+===================================================== -->
+<section class="section contact-s" id="contact">
+    <div class="container">
+        <div class="contact-grid">
+            <div>
+                <span class="label fu">Get in Touch</span>
+                <h2 class="h-display fu d1">We're here to help<br>plan your stay</h2>
+                <div class="gold-rule fu d2"></div>
+                <p class="contact-sub fu d3">
+                    Reach out directly and we'll be delighted to answer any questions about the property, availability, or the Dominion Beach community.
+                </p>
+                <div class="c-items">
+                    <div class="c-item fu d3">
+                        <div class="c-icon" aria-hidden="true">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                        </div>
+                        <div>
+                            <div class="c-lbl">Email</div>
+                            <div class="c-val"><a href="mailto:dominionbeachhouse@icloud.com">dominionbeachhouse@icloud.com</a></div>
+                        </div>
+                    </div>
+                    <div class="c-item fu d4">
+                        <div class="c-icon" aria-hidden="true">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.16 6.16l.88-.88a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                        </div>
+                        <div>
+                            <div class="c-lbl">WhatsApp &amp; Phone</div>
+                            <div class="c-val"><a href="https://wa.me/34630428779" target="_blank" rel="noopener noreferrer">+34 630 428 779</a></div>
+                        </div>
+                    </div>
+                    <div class="c-item fu d5">
+                        <div class="c-icon" aria-hidden="true">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                        </div>
+                        <div>
+                            <div class="c-lbl">Location</div>
+                            <div class="c-val">Dominion Beach, New Golden Mile<br>Estepona, Málaga, Spain</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="map-card fi d3">
+                <svg width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" style="color:var(--gold);opacity:.6;" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                <p>
+                    <strong>Dominion Beach</strong><br>
+                    New Golden Mile, Estepona<br>
+                    Málaga, Andalucía, Spain
+                </p>
+                <p>
+                    <small>
+                        30 min from Marbella · 45 min from Málaga Airport<br>
+                        20 min from Gibraltar · 10 min from Estepona centre
+                    </small>
+                </p>
+                <a href="https://maps.google.com/?q=Dominion+Beach+Estepona+Malaga"
+                   target="_blank" rel="noopener noreferrer"
+                   style="padding:10px 26px;border:1px solid rgba(201,164,110,.4);border-radius:2px;font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);transition:all .22s ease-out;display:inline-block;margin-top:8px;"
+                   onmouseover="this.style.background='rgba(201,164,110,.1)'"
+                   onmouseout="this.style.background='transparent'">
+                    View on Google Maps
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- ====================================================
+     FOOTER
+===================================================== -->
+<footer class="footer">
+    <div class="footer-in">
+        <div class="footer-top">
+            <div>
+                <div class="footer-brand">Dominion Beach House</div>
+                <div class="footer-loc">Estepona · New Golden Mile · Costa del Sol</div>
+            </div>
+            <ul class="footer-nav" role="list">
+                <li><a href="#about">About</a></li>
+                <li><a href="#property">The Home</a></li>
+                <li><a href="#resort">Resort</a></li>
+                <li><a href="#property">Gallery</a></li>
+                <li><a href="#booking">Book</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+        <div class="footer-rule"></div>
+        <div class="footer-bottom">
+            <span>© 2025 Dominion Beach House. All rights reserved.</span>
+            <span style="display:flex;align-items:center;gap:6px;">
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                Estepona, Málaga, Spain
+            </span>
+        </div>
+    </div>
+</footer>
+
+
+<!-- ====================================================
+     WHATSAPP FLOATING BUTTON
+===================================================== -->
+<a href="https://wa.me/34630428779"
+   class="wa-fab"
+   target="_blank"
+   rel="noopener noreferrer"
+   aria-label="Chat with us on WhatsApp">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+    </svg>
+</a>
+
+
+<!-- ====================================================
+     JAVASCRIPT
+===================================================== -->
+<script>
+(function () {
+    'use strict';
+
+    /* ── Navigation ───────────────────────────────────── */
+    const nav     = document.getElementById('nav');
+    const burger  = document.getElementById('burger');
+    const drawer  = document.getElementById('drawer');
+    const drawerClose = document.getElementById('drawerClose');
+    const drawerLinks = drawer.querySelectorAll('.dl');
+
+    window.addEventListener('scroll', () => {
+        nav.classList.toggle('solid', window.scrollY > 56);
+    }, { passive: true });
+
+    const openDrawer  = () => { drawer.classList.add('open');  document.body.style.overflow = 'hidden'; burger.setAttribute('aria-expanded','true'); };
+    const closeDrawer = () => { drawer.classList.remove('open'); document.body.style.overflow = ''; burger.setAttribute('aria-expanded','false'); };
+
+    burger.addEventListener('click', openDrawer);
+    drawerClose.addEventListener('click', closeDrawer);
+    drawerLinks.forEach(l => l.addEventListener('click', closeDrawer));
+    document.addEventListener('keydown', e => { if (e.key === 'Escape' && drawer.classList.contains('open')) closeDrawer(); });
+
+    /* ── Parallax hero ────────────────────────────────── */
+    const heroBg = document.getElementById('heroBg');
+    let ticking = false;
+    const onScroll = () => {
+        if (!ticking) {
+            requestAnimationFrame(() => {
+                const y = window.scrollY;
+                if (y < window.innerHeight) {
+                    heroBg.style.transform = `scale(1.06) translateY(${y * 0.3}px)`;
+                }
+                ticking = false;
+            });
+            ticking = true;
+        }
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+
+    /* ── Scroll animations (fu / fi / prop-card / g-item / resort-card / img-wrap) ── */
+    const allAnimEls = document.querySelectorAll('.fu, .fi, .prop-card, .g-item, .resort-card, .img-wrap');
+    const io = new IntersectionObserver(entries => {
+        entries.forEach(e => {
+            if (e.isIntersecting) {
+                e.target.classList.add('vis');
+                io.unobserve(e.target);
+            }
+        });
+    }, { threshold: 0.08, rootMargin: '0px 0px -32px 0px' });
+    allAnimEls.forEach(el => io.observe(el));
+
+    /* ── Stats counter animation ──────────────────────── */
+    const statEls = document.querySelectorAll('.stat');
+    const statData = [
+        { el: statEls[0], target: 2,    suffix: '',   duration: 1200 },
+        { el: statEls[1], target: 0,    suffix: 'm',  duration: 800  },
+        { el: statEls[2], target: 5,    suffix: '★',  duration: 1000 },
+        { el: statEls[3], target: 24,   suffix: '/7', duration: 1400, label: '24/7' },
+    ];
+    const statIO = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (!entry.isIntersecting) return;
+            const idx = [...statEls].indexOf(entry.target);
+            const d   = statData[idx];
+            if (!d || d.done) return;
+            d.done = true;
+            const numEl = entry.target.querySelector('.stat-n');
+            if (!numEl) return;
+            if (d.label) { numEl.textContent = d.label; return; }
+            const start = performance.now();
+            const tick  = now => {
+                const p   = Math.min((now - start) / d.duration, 1);
+                const val = Math.round(p * d.target);
+                numEl.textContent = val + d.suffix;
+                if (p < 1) requestAnimationFrame(tick);
+            };
+            requestAnimationFrame(tick);
+            statIO.unobserve(entry.target);
+        });
+    }, { threshold: 0.5 });
+    statEls.forEach(el => statIO.observe(el));
+
+    /* ── Gallery lightbox ─────────────────────────────── */
+    const items   = document.querySelectorAll('.g-item');
+    const lbox    = document.getElementById('lbox');
+    const lboxCap = document.getElementById('lboxCap');
+    const lboxContent = document.getElementById('lboxContent');
+    const lboxClose = document.getElementById('lboxClose');
+    const lboxPrev  = document.getElementById('lboxPrev');
+    const lboxNext  = document.getElementById('lboxNext');
+    let cur = 0;
+
+    const openLbox = idx => {
+        cur = idx;
+        const item = items[cur];
+        const cap  = item.dataset.cap || '';
+        const src  = item.dataset.src || '';
+        lboxCap.textContent = cap;
+        if (src) {
+            lboxContent.innerHTML = `<img src="${src}" alt="${cap}" class="lbox-img" loading="lazy">`;
+        } else {
+            lboxContent.style.cssText = 'width:min(88vw,860px);height:min(82vh,540px);background:#111;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.35);font-size:13px;border-radius:2px;text-align:center;padding:24px;line-height:1.7;letter-spacing:.04em;';
+            lboxContent.textContent = `"${cap}" — add images/your-photo.jpg to see it here`;
+        }
+        lbox.classList.add('on');
+        document.body.style.overflow = 'hidden';
+        lboxClose.focus();
+    };
+
+    const closeLbox = () => {
+        lbox.classList.remove('on');
+        document.body.style.overflow = '';
+    };
+
+    const prevItem = () => { cur = (cur - 1 + items.length) % items.length; openLbox(cur); };
+    const nextItem = () => { cur = (cur + 1)                % items.length; openLbox(cur); };
+
+    items.forEach((item, i) => item.addEventListener('click', () => openLbox(i)));
+    lboxClose.addEventListener('click', closeLbox);
+    lboxPrev.addEventListener('click', prevItem);
+    lboxNext.addEventListener('click', nextItem);
+    lbox.addEventListener('click', e => { if (e.target === lbox) closeLbox(); });
+    document.addEventListener('keydown', e => {
+        if (!lbox.classList.contains('on')) return;
+        if (e.key === 'Escape')     closeLbox();
+        if (e.key === 'ArrowLeft')  prevItem();
+        if (e.key === 'ArrowRight') nextItem();
+    });
+
+    /* ── Booking form ─────────────────────────────────── */
+    const RATE    = 500;
+    const MIN_NIGHTS = 6;
+    const today = new Date().toISOString().split('T')[0];
+    const ciEl  = document.getElementById('checkin');
+    const coEl  = document.getElementById('checkout');
+    const summary   = document.getElementById('costSummary');
+    const nightsEl  = document.getElementById('costNights');
+    const subEl     = document.getElementById('costSub');
+    const totalEl   = document.getElementById('costTotal');
+    const warnEl    = document.getElementById('costWarn');
+
+    ciEl.min = today;
+    coEl.min = today;
+
+    function updateCost() {
+        if (!ciEl.value || !coEl.value) { summary.classList.remove('show'); return; }
+        const nights = Math.round((new Date(coEl.value) - new Date(ciEl.value)) / 86400000);
+        if (nights <= 0) { summary.classList.remove('show'); return; }
+        summary.classList.add('show');
+        nightsEl.textContent = nights + ' night' + (nights !== 1 ? 's' : '');
+        const subtotal = nights * RATE;
+        subEl.textContent   = '€' + subtotal.toLocaleString('en-EU');
+        totalEl.textContent = '€' + subtotal.toLocaleString('en-EU');
+        if (nights < MIN_NIGHTS) {
+            warnEl.textContent = '⚠ Minimum stay is ' + MIN_NIGHTS + ' nights. Please adjust your dates.';
+            warnEl.style.display = 'block';
+        } else {
+            warnEl.style.display = 'none';
+        }
+    }
+
+    ciEl.addEventListener('change', () => { coEl.min = ciEl.value; updateCost(); });
+    coEl.addEventListener('change', updateCost);
+
+    document.getElementById('bookingForm').addEventListener('submit', (e) => {
+        if (ciEl.value && coEl.value) {
+            const nights = Math.round((new Date(coEl.value) - new Date(ciEl.value)) / 86400000);
+            if (nights < MIN_NIGHTS) { e.preventDefault(); warnEl.style.display = 'block'; warnEl.textContent = '⚠ Minimum stay is ' + MIN_NIGHTS + ' nights. Please select a longer stay.'; return; }
+        }
+        const btn = document.getElementById('formSubmit');
+        btn.textContent = 'Opening your email app…';
+        btn.style.background = 'var(--gold)';
+        setTimeout(() => { btn.textContent = 'Send Enquiry'; btn.style.background = ''; }, 4000);
+    });
+
+})();
+</script>
+
+<!-- Netlify Identity -->
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+<script>
+if (window.netlifyIdentity) {
+    window.netlifyIdentity.on('init', user => {
+        if (!user) window.netlifyIdentity.on('login', () => document.location.href = '/admin/');
+    });
+}
+</script>
+
+<!-- Photo loader: reads _data/photos.json and populates all photo slots -->
+<script>
+(function() {
+    var GRADIENT = 'linear-gradient(to bottom,rgba(8,22,38,.32) 0%,rgba(8,22,38,.08) 45%,rgba(8,22,38,.60) 100%)';
+
+    function makeImg(src, cls) {
+        var img = document.createElement('img');
+        img.src = src;
+        img.className = cls;
+        return img;
+    }
+
+    fetch('/_data/photos.json')
+        .then(function(r) { return r.json(); })
+        .then(function(p) {
+            // Hero background
+            if (p.hero) {
+                var bg = document.getElementById('heroBg');
+                if (bg) bg.style.background = GRADIENT + ", url('" + p.hero + "') center / cover no-repeat";
+            }
+
+            // Story image
+            if (p.story_main) {
+                var si = document.getElementById('storyImg');
+                if (si) si.src = p.story_main;
+            }
+
+            // Home + resort cards
+            document.querySelectorAll('[data-slot]').forEach(function(el) {
+                var slot = el.getAttribute('data-slot');
+                var url  = p[slot];
+                if (!url) return;
+
+                // Prop card
+                if (el.classList.contains('prop-card')) {
+                    var ph  = el.querySelector('.ph');
+                    var img = el.querySelector('.prop-card-img');
+                    if (ph) {
+                        var newImg = makeImg(url, 'prop-card-img');
+                        el.replaceChild(newImg, ph);
+                    } else if (img) {
+                        img.src = url;
+                    }
+                }
+
+                // Gallery item
+                if (el.classList.contains('g-item')) {
+                    var ph2  = el.querySelector('.ph');
+                    var img2 = el.querySelector('.g-item-img');
+                    el.setAttribute('data-src', url);
+                    if (ph2) {
+                        var newImg2 = makeImg(url, 'g-item-img');
+                        el.replaceChild(newImg2, ph2);
+                    } else if (img2) {
+                        img2.src = url;
+                    }
+                }
+            });
+        })
+        .catch(function() {}); // Graceful fallback — placeholders stay visible
+}());
+</script>
+
+</body>
+</html>

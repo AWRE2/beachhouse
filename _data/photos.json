@@ -1,18 +1,18 @@
 {
   "resort_1": "",
-  "story_main": "/images/living.jpg",
-  "home_kitchen": "/images/kitchen.jpg",
-  "resort_2": "",
+  "story_main": "/images/tv-area.jpg",
+  "home_kitchen": "/images/kitchen.jpeg",
+  "resort_2": "/images/resort21.jpeg",
   "resort_3": "",
-  "resort_4": "",
+  "resort_4": "/images/pool-1.jpeg",
   "resort_5": "",
   "resort_6": "",
-  "home_living": "/images/living.jpg",
+  "home_living": "",
   "home_bathroom": "/images/bathroom.jpg",
-  "home_terrace": "/images/terrace.jpg",
+  "home_terrace": "/images/outdoor-table.jpeg",
   "home_seaview": "/images/bedroom_twin.jpg",
   "home_lounge": "/images/dinnerrr.jpg",
   "hero": "",
   "home_bedroom": "/images/bedroom_master.jpg",
-  "home_exterior": ""
+  "home_exterior": "/images/dominion-front.jpeg"
 }

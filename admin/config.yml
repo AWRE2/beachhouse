@@ -1,6 +1,8 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: AWRE2/beachhouse
   branch: main
+  base_url: https://beachhouse.vercel.app
 
 media_folder: images
 public_folder: /images

@@ -237,3 +237,23 @@ collections:
             widget: image
             required: false
 
+          - label: "🏋 Resort — Gym"
+            name: resort_gym
+            widget: image
+            required: false
+
+          - label: "🚶 Resort — Walkway"
+            name: resort_walkway
+            widget: image
+            required: false
+
+          - label: "🏊 Resort — Pool 1"
+            name: resort_pool1
+            widget: image
+            required: false
+
+          - label: "🏊 Resort — Pool 2"
+            name: resort_pool2
+            widget: image
+            required: false
+

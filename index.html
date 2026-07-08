@@ -223,7 +223,7 @@
         .drawer {
             position: fixed; inset: 0;
             background: var(--ocean-900);
-            z-index: 999;
+            z-index: 1001;
             display: flex; flex-direction: column;
             align-items: center; justify-content: center;
             gap: 28px;
@@ -352,7 +352,7 @@
         .stat-l {
             font-size: 11px; font-weight: 500;
             letter-spacing: .14em; text-transform: uppercase;
-            color: rgba(255,255,255,.45);
+            color: rgba(255,255,255,.62);
         }
 
         /* ─── STORY ──────────────────────────────────────── */
@@ -550,104 +550,6 @@
         }
         .ph svg { opacity: .45; }
         .ph span { opacity: .7; }
-
-        /* ─── GALLERY ────────────────────────────────────── */
-        .gallery-bg { background: var(--cream); }
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(2,1fr);
-            gap: 8px;
-        }
-        @media (min-width: 640px)  { .gallery-grid { grid-template-columns: repeat(3,1fr); gap: 10px; } }
-        @media (min-width: 1024px) { .gallery-grid { grid-template-columns: repeat(4,1fr); } }
-        .g-item {
-            position: relative;
-            aspect-ratio: 1; overflow: hidden;
-            border-radius: 2px; cursor: pointer;
-            border: 3px solid #111;
-            box-shadow: 0 4px 18px rgba(0,0,0,.25);
-        }
-        .g-item.span2 { grid-column: span 2; aspect-ratio: 2/1; }
-        @media (max-width: 639px) { .g-item.span2 { grid-column: span 1; aspect-ratio: 1; } }
-        .g-item-img {
-            width: 100%; height: 100%; object-fit: cover;
-            filter: brightness(1.05) contrast(1.1) saturate(1.16);
-            transition: transform .55s var(--ease), filter .55s var(--ease);
-        }
-        .g-item:hover .g-item-img {
-            transform: scale(1.1);
-            filter: brightness(1.12) contrast(1.14) saturate(1.26);
-        }
-        /* Gallery items slide up on reveal */
-        .g-item {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity .6s var(--ease), transform .6s var(--ease);
-        }
-        .g-item.vis {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        .g-overlay {
-            position: absolute; inset: 0;
-            background: rgba(13,36,56,0);
-            display: flex; align-items: center; justify-content: center;
-            transition: background .3s ease-out;
-        }
-        .g-item:hover .g-overlay { background: rgba(13,36,56,.45); }
-        .g-zoom {
-            color: var(--white);
-            opacity: 0; transform: scale(.65);
-            transition: all .3s var(--ease);
-        }
-        .g-item:hover .g-zoom { opacity: 1; transform: scale(1); }
-
-        /* Lightbox */
-        .lbox {
-            position: fixed; inset: 0;
-            background: rgba(0,0,0,.96);
-            z-index: 2000;
-            display: flex; align-items: center; justify-content: center;
-            opacity: 0; pointer-events: none;
-            transition: opacity .35s var(--ease);
-        }
-        .lbox.on { opacity: 1; pointer-events: all; }
-        .lbox-wrap { position: relative; }
-        .lbox-img {
-            max-width: 90vw; max-height: 85vh;
-            object-fit: contain; border-radius: 2px;
-            display: block;
-        }
-        .lbox-close {
-            position: fixed; top: 20px; right: 24px;
-            background: none; border: none;
-            color: var(--white); font-size: 34px;
-            cursor: pointer; line-height: 1;
-            opacity: .65; transition: opacity .2s ease-out;
-        }
-        .lbox-close:hover { opacity: 1; }
-        .lbox-nav {
-            position: absolute; top: 50%; transform: translateY(-50%);
-            background: rgba(255,255,255,.12);
-            border: none; color: var(--white);
-            width: 46px; height: 46px; border-radius: 50%;
-            display: flex; align-items: center; justify-content: center;
-            cursor: pointer;
-            transition: background .2s ease-out;
-        }
-        .lbox-nav:hover { background: rgba(255,255,255,.28); }
-        .lbox-prev { left: -60px; }
-        .lbox-next { right: -60px; }
-        @media (max-width: 640px) {
-            .lbox-prev { left: 8px; }
-            .lbox-next { right: 8px; }
-        }
-        .lbox-caption {
-            position: absolute; bottom: -36px; left: 0; right: 0;
-            text-align: center;
-            font-size: 12px; color: rgba(255,255,255,.5);
-            letter-spacing: .08em;
-        }
 
         /* ─── AMENITIES ──────────────────────────────────── */
         .amen { background: var(--sand-50); }
@@ -1058,7 +960,6 @@
 
         <ul class="nav-links" role="list">
             <li><a href="#property">The Home</a></li>
-            <li><a href="#gallery">The Resort</a></li>
             <li><a href="#amenities">Amenities</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
@@ -1073,7 +974,6 @@
 <div class="drawer" id="drawer" role="dialog" aria-modal="true" aria-label="Navigation menu">
     <button class="drawer-close" id="drawerClose" aria-label="Close menu">×</button>
     <a href="#property"  class="dl">The Home</a>
-    <a href="#gallery"    class="dl">The Resort</a>
     <a href="#amenities" class="dl">Amenities</a>
     <a href="#booking"   class="dl">Book Now</a>
     <a href="#contact"   class="dl">Contact</a>
@@ -1229,84 +1129,6 @@
             </div>
         </div>
 
-        <!-- Resort gallery sub-section -->
-        <div id="gallery" style="margin-top:72px;">
-            <div class="section-head" style="margin-bottom:40px;">
-                <span class="label fu">The Resort</span>
-                <h3 class="h-display fu d1" style="font-size:clamp(1.6rem,3.5vw,2.4rem);">A visual journey</h3>
-                <div class="gold-rule center fu d2"></div>
-            </div>
-
-            <div class="gallery-grid" id="galleryGrid">
-
-                <!-- ✏️ REPLACE: add images/resort1.jpg, update data-src and data-cap -->
-                <div class="g-item span2 fi d1" data-src="" data-cap="Resort Photo 1" data-slot="resort_1">
-                    <div class="ph">
-                        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
-                        <span>Add Resort Photo</span>
-                    </div>
-                    <div class="g-overlay" aria-hidden="true">
-                        <svg class="g-zoom" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/><path d="M11 8v6M8 11h6"/></svg>
-                    </div>
-                </div>
-
-                <!-- ✏️ REPLACE: add images/resort2.jpg, update data-src and data-cap -->
-                <div class="g-item fi d2" data-src="" data-cap="Resort Photo 2" data-slot="resort_2">
-                    <div class="ph">
-                        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
-                        <span>Add Resort Photo</span>
-                    </div>
-                    <div class="g-overlay" aria-hidden="true">
-                        <svg class="g-zoom" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/><path d="M11 8v6M8 11h6"/></svg>
-                    </div>
-                </div>
-
-                <!-- ✏️ REPLACE: add images/resort3.jpg, update data-src and data-cap -->
-                <div class="g-item fi d3" data-src="" data-cap="Resort Photo 3" data-slot="resort_3">
-                    <div class="ph">
-                        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
-                        <span>Add Resort Photo</span>
-                    </div>
-                    <div class="g-overlay" aria-hidden="true">
-                        <svg class="g-zoom" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/><path d="M11 8v6M8 11h6"/></svg>
-                    </div>
-                </div>
-
-                <!-- ✏️ REPLACE: add images/resort4.jpg, update data-src and data-cap -->
-                <div class="g-item span2 fi d2" data-src="" data-cap="Resort Photo 4" data-slot="resort_4">
-                    <div class="ph">
-                        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
-                        <span>Add Resort Photo</span>
-                    </div>
-                    <div class="g-overlay" aria-hidden="true">
-                        <svg class="g-zoom" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/><path d="M11 8v6M8 11h6"/></svg>
-                    </div>
-                </div>
-
-                <!-- ✏️ REPLACE: add images/resort5.jpg, update data-src and data-cap -->
-                <div class="g-item fi d3" data-src="" data-cap="Resort Photo 5" data-slot="resort_5">
-                    <div class="ph">
-                        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
-                        <span>Add Resort Photo</span>
-                    </div>
-                    <div class="g-overlay" aria-hidden="true">
-                        <svg class="g-zoom" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/><path d="M11 8v6M8 11h6"/></svg>
-                    </div>
-                </div>
-
-                <!-- ✏️ REPLACE: add images/resort6.jpg, update data-src and data-cap -->
-                <div class="g-item fi d4" data-src="" data-cap="Resort Photo 6" data-slot="resort_6">
-                    <div class="ph">
-                        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
-                        <span>Add Resort Photo</span>
-                    </div>
-                    <div class="g-overlay" aria-hidden="true">
-                        <svg class="g-zoom" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/><path d="M11 8v6M8 11h6"/></svg>
-                    </div>
-                </div>
-
-            </div>
-        </div>
     </div>
 </section>
 
@@ -1324,28 +1146,6 @@
 </div>
 
 
-
-
-<!-- ====================================================
-     GALLERY
-===================================================== -->
-
-<!-- Lightbox -->
-<div class="lbox" id="lbox" role="dialog" aria-modal="true" aria-label="Photo viewer">
-    <button class="lbox-close" id="lboxClose" aria-label="Close photo viewer">×</button>
-    <div class="lbox-wrap">
-        <div id="lboxContent" style="width:min(88vw,860px);height:min(82vh,640px);background:#111;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.35);font-size:13px;border-radius:2px;letter-spacing:.06em;">
-            Add your images to see them here
-        </div>
-        <p class="lbox-caption" id="lboxCap" aria-live="polite"></p>
-        <button class="lbox-nav lbox-prev" id="lboxPrev" aria-label="Previous photo">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg>
-        </button>
-        <button class="lbox-nav lbox-next" id="lboxNext" aria-label="Next photo">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
-        </button>
-    </div>
-</div>
 
 
 <!-- ====================================================
@@ -1703,7 +1503,6 @@
             <ul class="footer-nav" role="list">
                 <li><a href="#about">About</a></li>
                 <li><a href="#property">The Home</a></li>
-                    <li><a href="#gallery">The Resort</a></li>
                 <li><a href="#booking">Book</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
@@ -1777,8 +1576,8 @@
     };
     window.addEventListener('scroll', onScroll, { passive: true });
 
-    /* ── Scroll animations (fu / fi / prop-card / g-item / resort-card / img-wrap) ── */
-    const allAnimEls = document.querySelectorAll('.fu, .fi, .prop-card, .g-item, .resort-card, .img-wrap');
+    /* ── Scroll animations (fu / fi / prop-card / resort-card / img-wrap) ── */
+    const allAnimEls = document.querySelectorAll('.fu, .fi, .prop-card, .resort-card, .img-wrap');
     const io = new IntersectionObserver(entries => {
         entries.forEach(e => {
             if (e.isIntersecting) {
@@ -1819,53 +1618,6 @@
         });
     }, { threshold: 0.5 });
     statEls.forEach(el => statIO.observe(el));
-
-    /* ── Gallery lightbox ─────────────────────────────── */
-    const items   = document.querySelectorAll('.g-item');
-    const lbox    = document.getElementById('lbox');
-    const lboxCap = document.getElementById('lboxCap');
-    const lboxContent = document.getElementById('lboxContent');
-    const lboxClose = document.getElementById('lboxClose');
-    const lboxPrev  = document.getElementById('lboxPrev');
-    const lboxNext  = document.getElementById('lboxNext');
-    let cur = 0;
-
-    const openLbox = idx => {
-        cur = idx;
-        const item = items[cur];
-        const cap  = item.dataset.cap || '';
-        const src  = item.dataset.src || '';
-        lboxCap.textContent = cap;
-        if (src) {
-            lboxContent.innerHTML = `<img src="${src}" alt="${cap}" class="lbox-img" loading="lazy">`;
-        } else {
-            lboxContent.style.cssText = 'width:min(88vw,860px);height:min(82vh,540px);background:#111;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.35);font-size:13px;border-radius:2px;text-align:center;padding:24px;line-height:1.7;letter-spacing:.04em;';
-            lboxContent.textContent = `"${cap}" — add images/your-photo.jpg to see it here`;
-        }
-        lbox.classList.add('on');
-        document.body.style.overflow = 'hidden';
-        lboxClose.focus();
-    };
-
-    const closeLbox = () => {
-        lbox.classList.remove('on');
-        document.body.style.overflow = '';
-    };
-
-    const prevItem = () => { cur = (cur - 1 + items.length) % items.length; openLbox(cur); };
-    const nextItem = () => { cur = (cur + 1)                % items.length; openLbox(cur); };
-
-    items.forEach((item, i) => item.addEventListener('click', () => openLbox(i)));
-    lboxClose.addEventListener('click', closeLbox);
-    lboxPrev.addEventListener('click', prevItem);
-    lboxNext.addEventListener('click', nextItem);
-    lbox.addEventListener('click', e => { if (e.target === lbox) closeLbox(); });
-    document.addEventListener('keydown', e => {
-        if (!lbox.classList.contains('on')) return;
-        if (e.key === 'Escape')     closeLbox();
-        if (e.key === 'ArrowLeft')  prevItem();
-        if (e.key === 'ArrowRight') nextItem();
-    });
 
     /* ── Booking form ─────────────────────────────────── */
     const RATE    = 500;
@@ -2046,12 +1798,6 @@ if (window.netlifyIdentity) {
                     var ph = el.querySelector('.ph'), img = el.querySelector('.prop-card-img');
                     if (ph) el.replaceChild(makeImg(url, 'prop-card-img'), ph);
                     else if (img) img.src = url;
-                }
-                if (el.classList.contains('g-item')) {
-                    var ph2 = el.querySelector('.ph'), img2 = el.querySelector('.g-item-img');
-                    el.setAttribute('data-src', url);
-                    if (ph2) el.replaceChild(makeImg(url, 'g-item-img'), ph2);
-                    else if (img2) img2.src = url;
                 }
             });
         })

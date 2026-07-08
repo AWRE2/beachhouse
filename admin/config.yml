@@ -237,34 +237,3 @@ collections:
             widget: image
             required: false
 
-          - label: "🏖 Resort Photo 1 (Wide)"
-            name: resort_1
-            widget: image
-            required: false
-            hint: "Displayed as a wide banner (spans 2 columns)."
-
-          - label: "🏊 Resort Photo 2"
-            name: resort_2
-            widget: image
-            required: false
-
-          - label: "🌴 Resort Photo 3"
-            name: resort_3
-            widget: image
-            required: false
-
-          - label: "🏡 Resort Photo 4 (Wide)"
-            name: resort_4
-            widget: image
-            required: false
-            hint: "Displayed as a wide banner (spans 2 columns)."
-
-          - label: "☀️ Resort Photo 5"
-            name: resort_5
-            widget: image
-            required: false
-
-          - label: "🌅 Resort Photo 6"
-            name: resort_6
-            widget: image
-            required: false

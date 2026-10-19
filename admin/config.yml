@@ -52,11 +52,6 @@ collections:
             widget: string
             hint: "Second line shown in italic. E.g. 'Living in Estepona'"
 
-          - label: "Subtitle"
-            name: hero_subtitle
-            widget: string
-            hint: "Small text below the headline."
-
           - label: "── STORY SECTION ──"
             name: _sep2
             widget: hidden

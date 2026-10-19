@@ -280,8 +280,8 @@
         }
         .hero-badge {
             display: inline-flex; align-items: center; gap: 14px;
-            margin-bottom: 30px;
-            opacity: 0; animation: fadeUp .8s .25s var(--ease) forwards;
+            margin-bottom: 44px;
+            opacity: 0; animation: fadeUp .8s .65s var(--ease) forwards;
         }
         .hero-badge-line { width: 36px; height: 1px; background: var(--gold); }
         .hero-badge-text {
@@ -997,18 +997,16 @@
     </div>
 
     <div class="hero-content">
-        <div class="hero-badge">
-            <span class="hero-badge-line" aria-hidden="true"></span>
-            <span class="hero-badge-text" id="heroBadge">Dominion Beach · New Golden Mile · Marbella</span>
-            <span class="hero-badge-line" aria-hidden="true"></span>
-        </div>
-
         <h1 class="hero-h1">
             <span id="heroLine1">Luxury Beachfront</span><br>
             <em id="heroLine2">Living in Marbella</em>
         </h1>
 
-        <p class="hero-sub" id="heroSub">An exclusive retreat on the shores of the Costa del Sol</p>
+        <div class="hero-badge">
+            <span class="hero-badge-line" aria-hidden="true"></span>
+            <span class="hero-badge-text" id="heroBadge">Dominion Beach · New Golden Mile · Marbella</span>
+            <span class="hero-badge-line" aria-hidden="true"></span>
+        </div>
 
         <div class="hero-ctas">
             <a href="#booking" class="btn btn-gold">Book Now</a>
@@ -1775,7 +1773,6 @@ if (window.netlifyIdentity) {
             setText('heroBadge',   c.hero_badge);
             setText('heroLine1',   c.hero_h1_line1);
             setText('heroLine2',   c.hero_h1_line2);
-            setText('heroSub',     c.hero_subtitle);
             setText('storyTag',    c.story_tag);
             setText('storyBody1',  c.story_body1);
             setText('storyBody2',  c.story_body2);

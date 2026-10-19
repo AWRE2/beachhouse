@@ -65,10 +65,6 @@ collections:
             name: story_heading
             widget: string
 
-          - label: "Story Paragraph 1"
-            name: story_body1
-            widget: text
-
           - label: "Story Paragraph 2"
             name: story_body2
             widget: text
@@ -229,26 +225,6 @@ collections:
 
           - label: "🚪 Home — Exterior & Entrance"
             name: home_exterior
-            widget: image
-            required: false
-
-          - label: "🏋 Resort — Gym"
-            name: resort_gym
-            widget: image
-            required: false
-
-          - label: "🚶 Resort — Walkway"
-            name: resort_walkway
-            widget: image
-            required: false
-
-          - label: "🏊 Resort — Pool 1"
-            name: resort_pool1
-            widget: image
-            required: false
-
-          - label: "🏊 Resort — Pool 2"
-            name: resort_pool2
             widget: image
             required: false
 

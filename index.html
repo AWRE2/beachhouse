@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Luxury beachfront holiday home at Dominion Beach, Marbella (Málaga). Direct beach access, two pools, private gym, and exclusive restaurant. New Golden Mile, Costa del Sol.">
-    <meta name="keywords" content="Marbella luxury penthouse rental, Dominion Beach rental, New Golden Mile vacation rental, beachfront apartment Marbella, luxury holiday rental Málaga Costa del Sol">
+    <meta name="description" content="Luxury beachfront holiday home at Dominion Beach, Marbella (Málaga). Direct beach access, two pools, private gym, and exclusive restaurant. Marbella · Estepona · Costa del Sol.">
+    <meta name="keywords" content="Marbella luxury penthouse rental, Dominion Beach rental, Estepona vacation rental, beachfront apartment Marbella, luxury holiday rental Málaga Costa del Sol">
     <meta property="og:title" content="Dominion Beach House | Luxury Beachfront Getaways in Marbella">
     <meta property="og:description" content="Exclusive beachfront living in Marbella's prestigious Dominion Beach resort. Direct beach access, two pools, gym, and private restaurant.">
     <meta property="og:type" content="website">
@@ -12,7 +12,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600;700&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,300;1,9..144,400;1,9..144,600;1,9..144,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600;700&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,300;1,9..144,400;1,9..144,600;1,9..144,700&family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
 
     <style>
         /* ─── DESIGN TOKENS ─────────────────────────────── */
@@ -683,8 +683,9 @@
             display: flex; flex-direction: column; align-items: flex-end; gap: 4px;
             border-left: 1px solid rgba(255,255,255,.15); padding-left: 24px;
         }
-        .price-min-num { font-family: var(--ff-serif); font-size: 1.6rem; color: var(--gold); line-height: 1; }
-        .price-min-label { font-size: 10px; color: rgba(255,255,255,.5); letter-spacing: .1em; text-transform: uppercase; }
+        .price-min-num { font-family: var(--ff-serif); font-size: clamp(2rem, 4vw, 2.6rem); color: var(--gold); line-height: 1; }
+        .price-min-label { font-size: 12px; color: rgba(255,255,255,.6); letter-spacing: .1em; text-transform: uppercase; }
+        .price-from { font-size: 11px; color: rgba(255,255,255,.55); letter-spacing: .12em; text-transform: uppercase; margin-bottom: 6px; }
 
         /* Live cost summary inside form */
         .cost-summary {
@@ -923,7 +924,7 @@
             .contact-s .container { overflow: hidden; }
             .contact-sub, .c-val, .c-val a { overflow-wrap: break-word; word-break: break-word; }
             .contact-grid { display: block; }
-            .map-card     { display: none; }
+            .map-card     { aspect-ratio: auto; margin-top: 40px; padding: 36px 20px; }
 
             /* Resort & amenities */
             .resort-grid          { grid-template-columns: 1fr; }
@@ -945,6 +946,79 @@
             }
             .fu, .fi { opacity: 1; transform: none; }
         }
+
+        /* ─── LANGUAGE FLAGS ─────────────────────────────── */
+        .nav-right { display: flex; align-items: center; gap: 14px; }
+        .lang { display: flex; gap: 6px; }
+        .lang-btn {
+            background: none; border: 0; padding: 3px; border-radius: 3px;
+            cursor: pointer; line-height: 0; opacity: .7;
+            transition: opacity .2s ease-out, box-shadow .2s ease-out;
+        }
+        .lang-btn img { width: 22px; height: 15px; object-fit: cover; border-radius: 2px; display: block; box-shadow: 0 0 0 1px rgba(0,0,0,.15); }
+        .lang-btn:hover, .lang-btn[aria-pressed="true"] { opacity: 1; }
+        .lang-btn[aria-pressed="true"] { box-shadow: 0 0 0 2px var(--gold); }
+        @media (max-width: 640px) {
+            .nav { padding: 0; }
+            .nav-logo-name, .nav-logo-loc { white-space: nowrap; }
+            .nav-logo-loc { letter-spacing: .1em; }
+            .nav-right { gap: 10px; }
+            .lang { gap: 2px; }
+            .lang-btn { padding: 2px; }
+            .lang-btn img { width: 20px; height: 14px; }
+        }
+        @media (max-width: 340px) { .nav-logo-loc { display: none; } }
+
+        /* ─── CONTACT / INQUIRY TABS ─────────────────────── */
+        .tabs-bar {
+            background: var(--ocean-900);
+            padding: 64px 24px 8px;
+            display: flex; justify-content: center; gap: 8px;
+            scroll-margin-top: var(--nav-h);
+        }
+        .tab-btn {
+            font-family: var(--ff-sans);
+            font-size: 12px; font-weight: 700;
+            letter-spacing: .14em; text-transform: uppercase;
+            padding: 14px 32px;
+            border: 1px solid rgba(255,255,255,.25); border-radius: 2px;
+            background: transparent; color: rgba(255,255,255,.75);
+            cursor: pointer; transition: all .2s ease-out;
+        }
+        .tab-btn:hover { color: var(--white); border-color: rgba(255,255,255,.5); }
+        .tab-btn[aria-selected="true"] { background: var(--gold); border-color: var(--gold); color: var(--white); }
+        .tab-panel.section { padding-top: 56px; }
+        .f-alt {
+            display: block; width: 100%; margin-top: 14px;
+            background: none; border: 0; cursor: pointer;
+            font-family: var(--ff-sans); font-size: 13px;
+            color: var(--ocean-700); text-decoration: underline;
+        }
+
+        /* ─── MOBILE: CENTRED TEXT ───────────────────────── */
+        @media (max-width: 640px) {
+            .story-grid > div:last-child,
+            .booking-grid > div:first-child,
+            .contact-grid > div:first-child,
+            .form-card-h, .form-card-sub { text-align: center; }
+            .story-grid .gold-rule, .booking-grid .gold-rule, .contact-grid .gold-rule { margin-left: auto; margin-right: auto; }
+            .bullets, .book-pts { align-items: center; }
+            .bullets li, .book-pts li { justify-content: center; text-align: center; }
+            .price-callout, .price-callout-left { align-items: center; text-align: center; }
+            .price-min { align-items: center; border-left: 0; padding-left: 0; border-top: 1px solid rgba(255,255,255,.15); padding-top: 12px; }
+            .c-items { align-items: center; }
+            .c-item { flex-direction: column; gap: 10px; text-align: center; }
+            .tabs-bar { padding-top: 44px; }
+            .tab-btn { padding: 13px 22px; }
+        }
+
+        /* ─── ARABIC (right-to-left) ─────────────────────── */
+        html[lang="ar"] body, html[lang="ar"] body * { font-family: 'Cairo', system-ui, sans-serif !important; letter-spacing: 0 !important; }
+        html[lang="ar"] .hero-h1, html[lang="ar"] em, html[lang="ar"] .story-tag,
+        html[lang="ar"] .book-tag, html[lang="ar"] .quote-text { font-style: normal; }
+        @media (min-width: 641px) {
+            html[dir="rtl"] .price-min { border-left: 0; padding-left: 0; border-right: 1px solid rgba(255,255,255,.15); padding-right: 24px; align-items: flex-start; }
+        }
     </style>
 </head>
 <body>
@@ -960,24 +1034,33 @@
         </a>
 
         <ul class="nav-links" role="list">
-            <li><a href="#property">The Home</a></li>
-            <li><a href="#amenities">Amenities</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="#property" data-i18n="nav_home">The Home</a></li>
+            <li><a href="#amenities" data-i18n="nav_amen">Amenities</a></li>
+            <li><a href="#contact" data-i18n="nav_contact">Contact</a></li>
         </ul>
 
-        <button class="burger" id="burger" aria-label="Open navigation menu" aria-expanded="false">
-            <span></span><span></span><span></span>
-        </button>
+        <div class="nav-right">
+            <div class="lang" role="group" aria-label="Language">
+                <button class="lang-btn" type="button" data-lang="fr" aria-label="Français" title="Français"><img src="https://flagcdn.com/fr.svg" alt="" width="22" height="15"></button>
+                <button class="lang-btn" type="button" data-lang="es" aria-label="Español" title="Español"><img src="https://flagcdn.com/es.svg" alt="" width="22" height="15"></button>
+                <button class="lang-btn" type="button" data-lang="en" aria-label="English" title="English"><img src="https://flagcdn.com/gb.svg" alt="" width="22" height="15"></button>
+                <button class="lang-btn" type="button" data-lang="de" aria-label="Deutsch" title="Deutsch"><img src="https://flagcdn.com/de.svg" alt="" width="22" height="15"></button>
+                <button class="lang-btn" type="button" data-lang="ar" aria-label="العربية" title="العربية"><img src="https://flagcdn.com/sa.svg" alt="" width="22" height="15"></button>
+            </div>
+            <button class="burger" id="burger" aria-label="Open navigation menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
     </div>
 </nav>
 
 <!-- Mobile drawer -->
 <div class="drawer" id="drawer" role="dialog" aria-modal="true" aria-label="Navigation menu">
     <button class="drawer-close" id="drawerClose" aria-label="Close menu">×</button>
-    <a href="#property"  class="dl">The Home</a>
-    <a href="#amenities" class="dl">Amenities</a>
-    <a href="#booking"   class="dl">Book Now</a>
-    <a href="#contact"   class="dl">Contact</a>
+    <a href="#property"  class="dl" data-i18n="nav_home">The Home</a>
+    <a href="#amenities" class="dl" data-i18n="nav_amen">Amenities</a>
+    <a href="#booking"   class="dl" data-i18n="nav_book">Book Now</a>
+    <a href="#contact"   class="dl" data-i18n="nav_contact">Contact</a>
 </div>
 
 
@@ -996,25 +1079,25 @@
 
     <div class="hero-content">
         <h1 class="hero-h1">
-            <span id="heroLine1">Luxury Beachfront</span><br>
-            <em id="heroLine2">Getaways in Marbella</em>
+            <span id="heroLine1" data-i18n="hero_l1">Luxury Beachfront</span><br>
+            <em id="heroLine2" data-i18n="hero_l2">Getaways in Marbella</em>
         </h1>
 
         <div class="hero-badge">
             <span class="hero-badge-line" aria-hidden="true"></span>
-            <span class="hero-badge-text" id="heroBadge">Dominion Beach · New Golden Mile · Marbella</span>
+            <span class="hero-badge-text" id="heroBadge">Marbella · Estepona · Costa del Sol</span>
             <span class="hero-badge-line" aria-hidden="true"></span>
         </div>
 
         <div class="hero-ctas">
-            <a href="#booking" class="btn btn-gold">Book Now</a>
-            <a href="#property" class="btn btn-ghost">View Home</a>
+            <a href="#booking" class="btn btn-gold" data-i18n="nav_book">Book Now</a>
+            <a href="#property" class="btn btn-ghost" data-i18n="btn_view">View Home</a>
         </div>
     </div>
 
     <div class="hero-scroll" aria-hidden="true">
         <div class="scroll-bar"></div>
-        <span>Scroll</span>
+        <span data-i18n="scroll">Scroll</span>
     </div>
 </section>
 
@@ -1024,10 +1107,10 @@
 ===================================================== -->
 <div class="strip" aria-label="Key features">
     <div class="strip-grid">
-        <div class="stat fu d1"><div class="stat-n">2</div><div class="stat-l">Swimming Pools</div></div>
-        <div class="stat fu d2"><div class="stat-n">0m</div><div class="stat-l">From the Beach</div></div>
-        <div class="stat fu d3"><div class="stat-n">5★</div><div class="stat-l">Resort Amenities</div></div>
-        <div class="stat fu d4"><div class="stat-n">24/7</div><div class="stat-l">Gated Security</div></div>
+        <div class="stat fu d1"><div class="stat-n">2</div><div class="stat-l" data-i18n="st_pools">Swimming Pools</div></div>
+        <div class="stat fu d2"><div class="stat-n">0m</div><div class="stat-l" data-i18n="st_beach">From the Beach</div></div>
+        <div class="stat fu d3"><div class="stat-n">5★</div><div class="stat-l" data-i18n="st_amen">Resort Amenities</div></div>
+        <div class="stat fu d4"><div class="stat-n">24/7</div><div class="stat-l" data-i18n="st_sec">Gated Security</div></div>
     </div>
 </div>
 
@@ -1047,20 +1130,20 @@
             </div>
 
             <div>
-                <p class="story-tag fu" id="storyTag">A place apart</p>
-                <h2 class="story-h fu d1" id="storyHeading">
+                <p class="story-tag fu" id="storyTag" data-i18n="story_tag">A place apart</p>
+                <h2 class="story-h fu d1" id="storyHeading" data-i18n="story_h">
                     Where the Mediterranean<br>becomes your backyard
                 </h2>
                 <div class="gold-rule fu d2"></div>
-                <p class="body-copy fu d4" id="storyBody2">
+                <p class="body-copy fu d4" id="storyBody2" data-i18n="story_body">
                     Steps from the beach, immersed in the exclusive Dominion Beach community. Spend your mornings by the pool or strolling to the shore, and dine beneath the stars at the resort's beachfront restaurant. This is not just a holiday rental — it is a lifestyle experience.
                 </p>
                 <ul class="bullets">
-                    <li class="fu d3"><span class="dot" aria-hidden="true"></span><span id="bullet1">Directly on the beachfront promenade</span></li>
-                    <li class="fu d4"><span class="dot" aria-hidden="true"></span><span id="bullet2">Exclusive gated resort with 24/7 security</span></li>
-                    <li class="fu d4"><span class="dot" aria-hidden="true"></span><span id="bullet3">Sleeps up to 6 guests in comfort</span></li>
-                    <li class="fu d5"><span class="dot" aria-hidden="true"></span><span id="bullet4">Premium finishes and full equipment throughout</span></li>
-                    <li class="fu d5"><span class="dot" aria-hidden="true"></span><span id="bullet5">Private terrace with garden and outdoor dining</span></li>
+                    <li class="fu d3"><span class="dot" aria-hidden="true"></span><span id="bullet1" data-i18n="b1">Directly on the beachfront promenade</span></li>
+                    <li class="fu d4"><span class="dot" aria-hidden="true"></span><span id="bullet2" data-i18n="b2">Exclusive gated resort with 24/7 security</span></li>
+                    <li class="fu d4"><span class="dot" aria-hidden="true"></span><span id="bullet3" data-i18n="b3">Sleeps up to 4 guests in comfort</span></li>
+                    <li class="fu d5"><span class="dot" aria-hidden="true"></span><span id="bullet4" data-i18n="b4">Premium finishes and full equipment throughout</span></li>
+                    <li class="fu d5"><span class="dot" aria-hidden="true"></span><span id="bullet5" data-i18n="b5">Private terrace with garden and outdoor dining</span></li>
                 </ul>
             </div>
         </div>
@@ -1074,10 +1157,10 @@
 <section class="section prop" id="property">
     <div class="container">
         <div class="section-head">
-            <span class="label fu">The Home</span>
-            <h2 class="h-display fu d1">Every detail,<br>thoughtfully considered</h2>
+            <span class="label fu" data-i18n="home_label">The Home</span>
+            <h2 class="h-display fu d1" data-i18n="home_h">Every detail,<br>thoughtfully considered</h2>
             <div class="gold-rule center fu d2"></div>
-            <p class="body-copy fu d3" style="max-width:580px;margin:0 auto;text-align:center;">
+            <p class="body-copy fu d3" style="max-width:580px;margin:0 auto;text-align:center;" data-i18n="home_body">
                 A fully furnished retreat combining timeless Mediterranean elegance with every modern comfort.
             </p>
         </div>
@@ -1086,42 +1169,42 @@
             <!-- 1. Master bedroom — guests book for sleep quality -->
             <div class="prop-card fi d1" data-slot="home_bedroom">
                 <img src="images/bedroom_master.jpg" alt="Master suite with double bed" class="prop-card-img">
-                <div class="prop-card-cap"><span id="cap_home_bedroom">Master Suite</span></div>
+                <div class="prop-card-cap"><span id="cap_home_bedroom" data-i18n="cap_bedroom">Master Suite</span></div>
             </div>
             <!-- 2. Living room — where they spend most time -->
             <div class="prop-card fi d2" data-slot="home_living">
                 <div class="ph"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg><span>Add Photo</span></div>
-                <div class="prop-card-cap"><span id="cap_home_living">Living Room</span></div>
+                <div class="prop-card-cap"><span id="cap_home_living" data-i18n="cap_living">Living Room</span></div>
             </div>
             <!-- 3. Terrace — key outdoor selling point -->
             <div class="prop-card fi d3" data-slot="home_terrace">
                 <img src="images/terrace.jpg" alt="Private terrace with mosaic dining table and lush garden" class="prop-card-img">
-                <div class="prop-card-cap"><span id="cap_home_terrace">Private Terrace &amp; Garden</span></div>
+                <div class="prop-card-cap"><span id="cap_home_terrace" data-i18n="cap_terrace">Private Terrace &amp; Garden</span></div>
             </div>
             <!-- 4. Lounge & dining -->
             <div class="prop-card fi d4" data-slot="home_lounge">
                 <div class="ph"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg><span>Add Photo</span></div>
-                <div class="prop-card-cap"><span id="cap_home_lounge">Lounge &amp; Dining</span></div>
+                <div class="prop-card-cap"><span id="cap_home_lounge" data-i18n="cap_lounge">Lounge &amp; Dining</span></div>
             </div>
             <!-- 5. Open plan dining room -->
             <div class="prop-card fi d1" data-slot="home_exterior">
                 <div class="ph"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg><span>Add Photo</span></div>
-                <div class="prop-card-cap"><span id="cap_home_exterior">Garden</span></div>
+                <div class="prop-card-cap"><span id="cap_home_exterior" data-i18n="cap_exterior">Garden</span></div>
             </div>
             <!-- 6. Twin bedroom -->
             <div class="prop-card fi d2" data-slot="home_seaview">
                 <div class="ph"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg><span>Add Photo</span></div>
-                <div class="prop-card-cap"><span id="cap_home_seaview">Twin Bedroom</span></div>
+                <div class="prop-card-cap"><span id="cap_home_seaview" data-i18n="cap_seaview">Twin Bedroom</span></div>
             </div>
             <!-- 7. Kitchen -->
             <div class="prop-card fi d3" data-slot="home_kitchen">
                 <img src="images/kitchen.jpg" alt="Modern kitchen with garden view window" class="prop-card-img">
-                <div class="prop-card-cap"><span id="cap_home_kitchen">Fully Equipped Kitchen</span></div>
+                <div class="prop-card-cap"><span id="cap_home_kitchen" data-i18n="cap_kitchen">Fully Equipped Kitchen</span></div>
             </div>
             <!-- 8. Bathroom -->
             <div class="prop-card fi d4" data-slot="home_bathroom">
                 <img src="images/bathroom.jpg" alt="Marble en-suite bathroom with bath and double sinks" class="prop-card-img">
-                <div class="prop-card-cap"><span id="cap_home_bathroom">En-Suite Marble Bathroom</span></div>
+                <div class="prop-card-cap"><span id="cap_home_bathroom" data-i18n="cap_bathroom">En-Suite Marble Bathroom</span></div>
             </div>
         </div>
 
@@ -1134,10 +1217,10 @@
 ===================================================== -->
 <div class="quote-banner">
     <blockquote>
-        <p class="quote-text fu" id="quoteText">
+        <p class="quote-text fu" id="quoteText" data-i18n="quote">
             "Step outside, and the Mediterranean stretches endlessly before you — the beach at your doorstep, golden Andalucían light all around."
         </p>
-        <footer class="quote-attr fu d2">Dominion Beach · New Golden Mile · Marbella</footer>
+        <footer class="quote-attr fu d2">Marbella · Estepona · Costa del Sol</footer>
     </blockquote>
 </div>
 
@@ -1150,8 +1233,8 @@
 <section class="section amen" id="amenities">
     <div class="container">
         <div class="section-head text-center">
-            <span class="label fu">What's Included</span>
-            <h2 class="h-display fu d1">Every comfort,<br>every convenience</h2>
+            <span class="label fu" data-i18n="amen_label">What's Included</span>
+            <h2 class="h-display fu d1" data-i18n="amen_h">Every comfort,<br>every convenience</h2>
             <div class="gold-rule center fu d2"></div>
         </div>
 
@@ -1161,7 +1244,7 @@
                 <svg class="amen-icon" viewBox="0 0 38 38" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" aria-hidden="true">
                     <path d="M7 30C7 30 9 22 19 22s12 8 12 8"/><circle cx="19" cy="12" r="6"/><path d="M3 34h32"/>
                 </svg>
-                <span class="amen-name">Beach Access</span>
+                <span class="amen-name" data-i18n="a_beach">Beach Access</span>
             </div>
 
             <div class="amen-item fu d2">
@@ -1170,7 +1253,7 @@
                     <path d="M4 18c0-8 4-12 15-12s15 4 15 12"/>
                     <path d="M4 24h30"/>
                 </svg>
-                <span class="amen-name">2 Pools</span>
+                <span class="amen-name" data-i18n="a_pools">2 Pools</span>
             </div>
 
             <div class="amen-item fu d3">
@@ -1179,14 +1262,14 @@
                     <path d="M11 8V6"/><path d="M27 14V12"/>
                     <circle cx="11" cy="16" r="2"/><path d="M4 30h30"/>
                 </svg>
-                <span class="amen-name">Fitness Centre</span>
+                <span class="amen-name" data-i18n="a_gym">Gym</span>
             </div>
 
             <div class="amen-item fu d4">
                 <svg class="amen-icon" viewBox="0 0 38 38" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" aria-hidden="true">
                     <path d="M8 30L10 10l9-4 9 4 2 20"/><path d="M6 30h26"/><rect x="15" y="20" width="8" height="10" rx="1"/>
                 </svg>
-                <span class="amen-name">Beachfront Restaurant</span>
+                <span class="amen-name" data-i18n="a_rest">Beachfront Restaurant</span>
             </div>
 
             <div class="amen-item fu d5">
@@ -1195,7 +1278,7 @@
                     <path d="M9 18c0-4 4-8 10-8s10 4 10 8"/>
                     <circle cx="19" cy="6" r="2"/>
                 </svg>
-                <span class="amen-name">Sun Loungers</span>
+                <span class="amen-name" data-i18n="a_loungers">Sun Loungers</span>
             </div>
 
             <div class="amen-item fu d1">
@@ -1203,7 +1286,7 @@
                     <rect x="4" y="9" width="30" height="20" rx="2"/>
                     <path d="M4 15h30"/><path d="M12 29v4"/><path d="M26 29v4"/><path d="M8 33h22"/>
                 </svg>
-                <span class="amen-name">Air Conditioning</span>
+                <span class="amen-name" data-i18n="a_ac">Air Conditioning</span>
             </div>
 
             <div class="amen-item fu d2">
@@ -1214,7 +1297,7 @@
                     <circle cx="12" cy="24" r="2"/>
                     <path d="M20 16V10l-4 2 4 2 4-2-4-2"/>
                 </svg>
-                <span class="amen-name">Equipped Kitchen</span>
+                <span class="amen-name" data-i18n="a_kitchen">Equipped Kitchen</span>
             </div>
 
             <div class="amen-item fu d3">
@@ -1223,7 +1306,7 @@
                     <path d="M15 22v10"/><path d="M23 22v10"/>
                     <path d="M12 10L19 6l7 4"/>
                 </svg>
-                <span class="amen-name">Private Terrace</span>
+                <span class="amen-name" data-i18n="a_terrace">Private Terrace</span>
             </div>
 
             <div class="amen-item fu d4">
@@ -1234,7 +1317,7 @@
                     <path d="M24 16h8v18h-8"/>
                     <path d="M28 16V10"/>
                 </svg>
-                <span class="amen-name">Washer &amp; Dryer</span>
+                <span class="amen-name" data-i18n="a_washer">Washer &amp; Dryer</span>
             </div>
 
             <div class="amen-item fu d5">
@@ -1243,7 +1326,7 @@
                     <path d="M6 19h26"/><path d="M19 6c0 0-6 6-6 13s6 13 6 13"/>
                     <path d="M19 6c0 0 6 6 6 13s-6 13-6 13"/>
                 </svg>
-                <span class="amen-name">Free Wi-Fi</span>
+                <span class="amen-name" data-i18n="a_wifi">Free Wi-Fi</span>
             </div>
 
             <div class="amen-item fu d1">
@@ -1251,7 +1334,7 @@
                     <path d="M19 5C11 5 5 11 5 19v12l14 5 14-5V19C33 11 27 5 19 5Z"/>
                     <path d="M13 20l4 4 8-8"/>
                 </svg>
-                <span class="amen-name">Gated Community</span>
+                <span class="amen-name" data-i18n="a_gated">Gated Community</span>
             </div>
 
             <div class="amen-item fu d2">
@@ -1260,7 +1343,7 @@
                     <circle cx="19" cy="10" r="5"/>
                     <path d="M3 33h32"/>
                 </svg>
-                <span class="amen-name">Coastal Promenade</span>
+                <span class="amen-name" data-i18n="a_prom">Coastal Promenade</span>
             </div>
 
             <div class="amen-item fu d3">
@@ -1269,7 +1352,7 @@
                     <path d="M12 28v4"/><path d="M26 28v4"/><path d="M8 32h22"/>
                     <circle cx="19" cy="18" r="4"/>
                 </svg>
-                <span class="amen-name">Smart TV</span>
+                <span class="amen-name" data-i18n="a_tv">Smart TV</span>
             </div>
 
             <div class="amen-item fu d4">
@@ -1277,7 +1360,7 @@
                     <path d="M7 32L10 8l9-4 9 4 3 24"/><path d="M5 32h28"/>
                     <path d="M15 22h8v10h-8z"/>
                 </svg>
-                <span class="amen-name">Linen &amp; Towels</span>
+                <span class="amen-name" data-i18n="a_linen">Linen &amp; Towels</span>
             </div>
 
             <div class="amen-item fu d5">
@@ -1285,7 +1368,7 @@
                     <circle cx="19" cy="19" r="14"/>
                     <path d="M19 9v10l6 6"/>
                 </svg>
-                <span class="amen-name">Flexible Check-in</span>
+                <span class="amen-name" data-i18n="a_checkin">Flexible Check-in</span>
             </div>
 
         </div>
@@ -1294,140 +1377,25 @@
 
 
 <!-- ====================================================
-     BOOKING
+     CONTACT & INQUIRY (tabs)
 ===================================================== -->
-<section class="section booking" id="booking">
-    <div class="container">
-        <div class="booking-grid">
-            <!-- Left column -->
-            <div>
-                <p class="book-tag fu">Reserve Your Stay</p>
-                <h2 class="book-h fu d1">Your Mediterranean<br>escape awaits</h2>
-                <div class="gold-rule fu d2"></div>
-                <p class="book-body fu d3">
-                    Whether you're planning a romantic getaway, a family holiday, or a longer stay in the sun, we'd love to help you experience Dominion Beach at its finest. Get in touch and we'll respond within 24 hours.
-                </p>
-                <div class="price-callout fu d2">
-                    <div class="price-callout-left">
-                        <div class="price-rate"><sup>€</sup><span id="priceNum">500</span></div>
-                        <div class="price-note">per night · direct booking</div>
-                    </div>
-                    <div class="price-min">
-                        <div class="price-min-num" id="minNights">6</div>
-                        <div class="price-min-label">night minimum</div>
-                    </div>
-                </div>
-
-                <ul class="book-pts">
-                    <li class="fu d3">
-                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M2 8l4 4 8-8"/></svg>
-                        Minimum stay: 6 nights
-                    </li>
-                    <li class="fu d3">
-                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M2 8l4 4 8-8"/></svg>
-                        Flexible check-in &amp; check-out
-                    </li>
-                    <li class="fu d4">
-                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M2 8l4 4 8-8"/></svg>
-                        Professional welcome &amp; orientation
-                    </li>
-                    <li class="fu d4">
-                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M2 8l4 4 8-8"/></svg>
-                        Direct booking — no platform fees
-                    </li>
-                    <li class="fu d5">
-                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M2 8l4 4 8-8"/></svg>
-                        Response within 24 hours
-                    </li>
-                </ul>
-            </div>
-
-            <!-- Right column: form -->
-            <div class="form-card fu d2">
-                <h3 class="form-card-h">Send an Enquiry</h3>
-                <p class="form-card-sub">We'll reply with availability and rates within 24 hours.</p>
-
-                <form id="bookingForm" name="enquiry" method="POST" data-netlify="true" netlify-honeypot="bot-field" novalidate>
-                    <input type="hidden" name="form-name" value="enquiry">
-                    <p style="display:none"><label>Don't fill this out: <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
-
-                    <div class="f-row">
-                        <div class="f-group">
-                            <label class="f-label" for="fname">First Name <span aria-label="required">*</span></label>
-                            <input class="f-input" type="text" id="fname" name="First Name" required placeholder="Maria" autocomplete="given-name">
-                        </div>
-                        <div class="f-group">
-                            <label class="f-label" for="lname">Last Name <span aria-label="required">*</span></label>
-                            <input class="f-input" type="text" id="lname" name="Last Name" required placeholder="García" autocomplete="family-name">
-                        </div>
-                    </div>
-
-                    <div class="f-group mb-16">
-                        <label class="f-label" for="email">Email Address <span aria-label="required">*</span></label>
-                        <input class="f-input" type="email" id="email" name="Email" required placeholder="maria@example.com" autocomplete="email">
-                    </div>
-
-                    <div class="f-group mb-16">
-                        <label class="f-label" for="phone">Phone / WhatsApp</label>
-                        <input class="f-input" type="tel" id="phone" name="Phone" placeholder="+34 600 000 000" autocomplete="tel">
-                    </div>
-
-                    <div class="f-row">
-                        <div class="f-group">
-                            <label class="f-label" for="checkin">Check-in <span aria-label="required">*</span></label>
-                            <input class="f-input" type="date" id="checkin" name="Check-in" required>
-                        </div>
-                        <div class="f-group">
-                            <label class="f-label" for="checkout">Check-out <span aria-label="required">*</span></label>
-                            <input class="f-input" type="date" id="checkout" name="Check-out" required>
-                        </div>
-                    </div>
-
-                    <div class="cost-summary" id="costSummary">
-                        <div class="cost-row"><span>Rate</span><span>€500 / night</span></div>
-                        <div class="cost-row"><span id="costNights">— nights</span><span id="costSub">—</span></div>
-                        <div class="cost-total"><span>Estimated total</span><span id="costTotal">—</span></div>
-                        <div class="cost-warn" id="costWarn" style="display:none"></div>
-                    </div>
-
-                    <div class="f-group mb-16">
-                        <label class="f-label" for="guests">Number of Guests <span aria-label="required">*</span></label>
-                        <select class="f-select" id="guests" name="Guests" required>
-                            <option value="" disabled selected>Select guests</option>
-                            <option value="1 guest">1 guest</option>
-                            <option value="2 guests">2 guests</option>
-                            <option value="3 guests">3 guests</option>
-                            <option value="4 guests">4 guests</option>
-                            <option value="5 guests">5 guests</option>
-                            <option value="6 guests">6 guests</option>
-                        </select>
-                    </div>
-
-                    <div class="f-group mb-16">
-                        <label class="f-label" for="message">Message</label>
-                        <textarea class="f-textarea" id="message" name="Message" placeholder="Tell us about your trip, any special requests, or questions you have…"></textarea>
-                    </div>
-
-                    <button type="submit" class="f-submit" id="formSubmit">Send Enquiry</button>
-                </form>
-            </div>
-        </div>
-    </div>
-</section>
-
+<div class="tabs-bar" id="enquire" role="tablist" aria-label="Contact options">
+    <button class="tab-btn" type="button" role="tab" id="tab-contact" aria-controls="contact" aria-selected="true" data-tab="contact" data-i18n="tab_contact">Contact</button>
+    <button class="tab-btn" type="button" role="tab" id="tab-booking" aria-controls="booking" aria-selected="false" data-tab="booking" data-i18n="tab_inquiry">Inquiry</button>
+</div>
 
 <!-- ====================================================
      CONTACT
 ===================================================== -->
-<section class="section contact-s" id="contact">
+<section class="section contact-s tab-panel" id="contact" role="tabpanel" aria-labelledby="tab-contact">
     <div class="container">
         <div class="contact-grid">
             <div>
-                <span class="label fu">Get in Touch</span>
-                <h2 class="h-display fu d1">We're here to help<br>plan your stay</h2>
+                <span class="label fu" data-i18n="contact_label">Get in Touch</span>
+                <h2 class="h-display fu d1" data-i18n="contact_h">Let's plan<br>your stay</h2>
                 <div class="gold-rule fu d2"></div>
-                <p class="contact-sub fu d3">
-                    Reach out directly and we'll be delighted to answer any questions about the property, availability, or the Dominion Beach community.
+                <p class="contact-sub fu d3" data-i18n="contact_sub">
+                    Questions about the home, availability or the area? Get in touch directly — we'd love to help.
                 </p>
                 <div class="c-items">
                     <div class="c-item fu d3">
@@ -1435,8 +1403,8 @@
                             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
                         </div>
                         <div>
-                            <div class="c-lbl">Email</div>
-                            <div class="c-val"><a href="mailto:dominionbeachhouse@icloud.com" id="contactEmail">dominionbeachhouse@icloud.com</a></div>
+                            <div class="c-lbl" data-i18n="c_email">Email</div>
+                            <div class="c-val"><a href="mailto:dominionbeachhouse@icloud.com" id="contactEmail" dir="ltr">dominionbeachhouse@icloud.com</a></div>
                         </div>
                     </div>
                     <div class="c-item fu d4">
@@ -1444,17 +1412,8 @@
                             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.16 6.16l.88-.88a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
                         </div>
                         <div>
-                            <div class="c-lbl">WhatsApp &amp; Phone</div>
-                            <div class="c-val"><a href="https://wa.me/34630428779" target="_blank" rel="noopener noreferrer" id="contactPhone">+34 630 428 779</a></div>
-                        </div>
-                    </div>
-                    <div class="c-item fu d5">
-                        <div class="c-icon" aria-hidden="true">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                        </div>
-                        <div>
-                            <div class="c-lbl">Location</div>
-                            <div class="c-val" id="contactLocation">Dominion Beach, New Golden Mile<br>Marbella, Málaga, Spain</div>
+                            <div class="c-lbl" data-i18n="c_wa">WhatsApp &amp; Phone</div>
+                            <div class="c-val"><a href="https://wa.me/34630428779" target="_blank" rel="noopener noreferrer" id="contactPhone" dir="ltr">+34 630 428 779</a></div>
                         </div>
                     </div>
                 </div>
@@ -1463,22 +1422,140 @@
             <div class="map-card fi d3">
                 <svg width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" style="color:var(--gold);opacity:.6;" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
                 <p>
-                    <strong>Dominion Beach</strong><br>
-                    New Golden Mile, Marbella<br>
-                    Málaga, Andalucía, Spain
+                    <strong>Dominion Beach House</strong><br>
+                    <span id="contactLocation" data-i18n="loc">Marbella · Estepona<br>Costa del Sol, Spain</span>
                 </p>
                 <p>
-                    <small>
-                        45 min from Málaga Airport
-                    </small>
+                    <small data-i18n="airport">45 min from Málaga Airport</small>
                 </p>
-                <a href="https://maps.google.com/?q=Dominion+Beach+Marbella+Malaga"
+                <a href="https://maps.google.com/?q=Dominion+Beach+Estepona"
                    target="_blank" rel="noopener noreferrer"
                    style="padding:10px 26px;border:1px solid rgba(201,164,110,.4);border-radius:2px;font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);transition:all .22s ease-out;display:inline-block;margin-top:8px;"
                    onmouseover="this.style.background='rgba(201,164,110,.1)'"
                    onmouseout="this.style.background='transparent'">
-                    View on Google Maps
+                    <span data-i18n="map_btn">View Dominion Beach House</span>
                 </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- ====================================================
+     BOOKING
+===================================================== -->
+<section class="section booking tab-panel" id="booking" role="tabpanel" aria-labelledby="tab-booking" hidden>
+    <div class="container">
+        <div class="booking-grid">
+            <!-- Left column -->
+            <div>
+                <p class="book-tag fu" data-i18n="book_tag">Reserve Your Stay</p>
+                <h2 class="book-h fu d1" data-i18n="book_h">Your Mediterranean<br>escape awaits</h2>
+                <div class="gold-rule fu d2"></div>
+                <p class="book-body fu d3" data-i18n="book_body">
+                    Whether you're planning a romantic getaway, a family holiday, or a longer stay in the sun, we'd love to help you experience Dominion Beach at its finest. Get in touch and we'll respond within 24 hours.
+                </p>
+                <div class="price-callout fu d2">
+                    <div class="price-callout-left">
+                        <div class="price-from" data-i18n="price_from">Starting at</div>
+                        <div class="price-rate"><sup>€</sup><span id="priceNum">200</span></div>
+                        <div class="price-note" data-i18n="price_note">per night · direct booking</div>
+                    </div>
+                    <div class="price-min">
+                        <div class="price-min-num" id="minNights">6</div>
+                        <div class="price-min-label" data-i18n="min_label">nights minimum</div>
+                    </div>
+                </div>
+
+                <ul class="book-pts">
+                    <li class="fu d3">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M2 8l4 4 8-8"/></svg>
+                        <span data-i18n="pt1">Minimum stay: 6 nights</span>
+                    </li>
+                    <li class="fu d3">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M2 8l4 4 8-8"/></svg>
+                        <span data-i18n="pt2">Flexible check-in &amp; check-out</span>
+                    </li>
+                    <li class="fu d4">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M2 8l4 4 8-8"/></svg>
+                        <span data-i18n="pt3">Professional welcome &amp; orientation</span>
+                    </li>
+                    <li class="fu d4">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M2 8l4 4 8-8"/></svg>
+                        <span data-i18n="pt4">Direct booking — no platform fees</span>
+                    </li>
+                    <li class="fu d5">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M2 8l4 4 8-8"/></svg>
+                        <span data-i18n="pt5">Response within 24 hours</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Right column: form -->
+            <div class="form-card fu d2">
+                <h3 class="form-card-h" data-i18n="form_h">Send an Inquiry</h3>
+                <p class="form-card-sub" data-i18n="form_sub">We'll reply with availability and rates within 24 hours.</p>
+
+                <form id="bookingForm" name="inquiry" novalidate>
+
+                    <div class="f-row">
+                        <div class="f-group">
+                            <label class="f-label" for="fname"><span data-i18n="f_fname">First Name</span> <span aria-label="required">*</span></label>
+                            <input class="f-input" type="text" id="fname" name="First Name" required placeholder="Maria" autocomplete="given-name">
+                        </div>
+                        <div class="f-group">
+                            <label class="f-label" for="lname"><span data-i18n="f_lname">Last Name</span> <span aria-label="required">*</span></label>
+                            <input class="f-input" type="text" id="lname" name="Last Name" required placeholder="García" autocomplete="family-name">
+                        </div>
+                    </div>
+
+                    <div class="f-group mb-16">
+                        <label class="f-label" for="email"><span data-i18n="f_email">Email Address</span> <span aria-label="required">*</span></label>
+                        <input class="f-input" type="email" id="email" name="Email" required placeholder="maria@example.com" autocomplete="email">
+                    </div>
+
+                    <div class="f-group mb-16">
+                        <label class="f-label" for="phone"><span data-i18n="f_phone">Phone / WhatsApp</span></label>
+                        <input class="f-input" type="tel" id="phone" name="Phone" placeholder="+34 600 000 000" autocomplete="tel">
+                    </div>
+
+                    <div class="f-row">
+                        <div class="f-group">
+                            <label class="f-label" for="checkin"><span data-i18n="f_in">Check-in</span> <span aria-label="required">*</span></label>
+                            <input class="f-input" type="date" id="checkin" name="Check-in" required>
+                        </div>
+                        <div class="f-group">
+                            <label class="f-label" for="checkout"><span data-i18n="f_out">Check-out</span> <span aria-label="required">*</span></label>
+                            <input class="f-input" type="date" id="checkout" name="Check-out" required>
+                        </div>
+                    </div>
+
+                    <div class="cost-summary" id="costSummary">
+                        <div class="cost-row"><span data-i18n="cost_rate">Rate</span><span id="costRate">€200 / night</span></div>
+                        <div class="cost-row"><span id="costNights">— nights</span><span id="costSub">—</span></div>
+                        <div class="cost-total"><span data-i18n="cost_total">Estimated total</span><span id="costTotal">—</span></div>
+                        <div class="cost-warn" id="costWarn" style="display:none"></div>
+                    </div>
+
+                    <div class="f-group mb-16">
+                        <label class="f-label" for="guests"><span data-i18n="f_guests">Number of Guests</span> <span aria-label="required">*</span></label>
+                        <select class="f-select" id="guests" name="Guests" required>
+                            <option value="" disabled selected data-i18n="g_select">Select guests</option>
+                            <option value="1 guest" data-i18n="g1">1 guest</option>
+                            <option value="2 guests" data-i18n="g2">2 guests</option>
+                            <option value="3 guests" data-i18n="g3">3 guests</option>
+                            <option value="4 guests" data-i18n="g4">4 guests</option>
+                        </select>
+                    </div>
+
+                    <div class="f-group mb-16">
+                        <label class="f-label" for="message"><span data-i18n="f_msg">Message</span></label>
+                        <textarea class="f-textarea" id="message" name="Message" data-i18n-ph="f_msg_ph" placeholder="Tell us about your trip, any special requests, or questions you have…"></textarea>
+                    </div>
+
+                    <button type="submit" class="f-submit" id="formSubmit" data-i18n="submit">Send via WhatsApp</button>
+                    <button type="button" class="f-alt" id="formEmail" data-i18n="email_alt">Prefer email? Send by email</button>
+                </form>
             </div>
         </div>
     </div>
@@ -1493,21 +1570,21 @@
         <div class="footer-top">
             <div>
                 <div class="footer-brand">Dominion Beach House</div>
-                <div class="footer-loc">Marbella · New Golden Mile · Costa del Sol</div>
+                <div class="footer-loc">Marbella · Estepona · Costa del Sol</div>
             </div>
             <ul class="footer-nav" role="list">
-                <li><a href="#about">About</a></li>
-                <li><a href="#property">The Home</a></li>
-                <li><a href="#booking">Book</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#about" data-i18n="foot_about">About</a></li>
+                <li><a href="#property" data-i18n="nav_home">The Home</a></li>
+                <li><a href="#booking" data-i18n="foot_book">Book</a></li>
+                <li><a href="#contact" data-i18n="nav_contact">Contact</a></li>
             </ul>
         </div>
         <div class="footer-rule"></div>
         <div class="footer-bottom">
-            <span>© 2025 Dominion Beach House. All rights reserved.</span>
+            <span data-i18n="foot_rights">© 2025 Dominion Beach House. All rights reserved.</span>
             <span style="display:flex;align-items:center;gap:6px;">
                 <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                Marbella, Málaga, Spain
+                <span data-i18n="foot_place">Marbella, Málaga, Spain</span>
             </span>
         </div>
     </div>
@@ -1531,6 +1608,7 @@
 <!-- ====================================================
      JAVASCRIPT
 ===================================================== -->
+<script src="i18n.js"></script>
 <script>
 (function () {
     'use strict';
@@ -1614,32 +1692,55 @@
     }, { threshold: 0.5 });
     statEls.forEach(el => statIO.observe(el));
 
-    /* ── Booking form ─────────────────────────────────── */
-    const RATE    = 500;
-    const MIN_NIGHTS = 6;
+    /* ── Contact / Inquiry tabs ───────────────────────── */
+    const tabBtns = document.querySelectorAll('.tab-btn');
+    const showTab = id => tabBtns.forEach(b => {
+        const on = b.dataset.tab === id;
+        b.setAttribute('aria-selected', on ? 'true' : 'false');
+        document.getElementById(b.dataset.tab).hidden = !on;
+    });
+    tabBtns.forEach(b => b.addEventListener('click', () => showTab(b.dataset.tab)));
+    document.querySelectorAll('a[href="#booking"], a[href="#contact"]').forEach(a => a.addEventListener('click', e => {
+        e.preventDefault();
+        showTab(a.getAttribute('href').slice(1));
+        document.getElementById('enquire').scrollIntoView({ behavior: 'smooth' });
+    }));
+    if (location.hash === '#booking') {
+        showTab('booking');
+        document.getElementById('enquire').scrollIntoView();
+    }
+
+    /* ── Inquiry form (sent via WhatsApp or email; the site has no server to receive it) ── */
+    // Read at use time so prices edited in /admin apply.
+    const rate      = () => parseFloat(document.getElementById('priceNum').textContent) || 200;
+    const minNights = () => parseInt(document.getElementById('minNights').textContent, 10) || 6;
     const today = new Date().toISOString().split('T')[0];
+    const form  = document.getElementById('bookingForm');
     const ciEl  = document.getElementById('checkin');
     const coEl  = document.getElementById('checkout');
     const summary   = document.getElementById('costSummary');
+    const rateEl    = document.getElementById('costRate');
     const nightsEl  = document.getElementById('costNights');
     const subEl     = document.getElementById('costSub');
     const totalEl   = document.getElementById('costTotal');
     const warnEl    = document.getElementById('costWarn');
+    const nightCount = () => Math.round((new Date(coEl.value) - new Date(ciEl.value)) / 86400000);
 
     ciEl.min = today;
     coEl.min = today;
 
     function updateCost() {
         if (!ciEl.value || !coEl.value) { summary.classList.remove('show'); return; }
-        const nights = Math.round((new Date(coEl.value) - new Date(ciEl.value)) / 86400000);
+        const nights = nightCount();
         if (nights <= 0) { summary.classList.remove('show'); return; }
         summary.classList.add('show');
-        nightsEl.textContent = nights + ' night' + (nights !== 1 ? 's' : '');
-        const subtotal = nights * RATE;
+        rateEl.textContent   = '€' + rate() + t('rate_per');
+        nightsEl.textContent = nights + ' ' + t(nights === 1 ? 'night' : 'nights');
+        const subtotal = nights * rate();
         subEl.textContent   = '€' + subtotal.toLocaleString('en-EU');
         totalEl.textContent = '€' + subtotal.toLocaleString('en-EU');
-        if (nights < MIN_NIGHTS) {
-            warnEl.textContent = '⚠ Minimum stay is ' + MIN_NIGHTS + ' nights. Please adjust your dates.';
+        if (nights < minNights()) {
+            warnEl.textContent = '⚠ ' + t('warn_adjust', minNights());
             warnEl.style.display = 'block';
         } else {
             warnEl.style.display = 'none';
@@ -1648,41 +1749,45 @@
 
     ciEl.addEventListener('change', () => { coEl.min = ciEl.value; updateCost(); });
     coEl.addEventListener('change', updateCost);
+    document.addEventListener('langchange', updateCost);
 
-    document.getElementById('bookingForm').addEventListener('submit', (e) => {
-        e.preventDefault();
-
-        // Minimum nights check
-        if (ciEl.value && coEl.value) {
-            const nights = Math.round((new Date(coEl.value) - new Date(ciEl.value)) / 86400000);
-            if (nights < MIN_NIGHTS) {
-                warnEl.style.display = 'block';
-                warnEl.textContent = '⚠ Minimum stay is ' + MIN_NIGHTS + ' nights. Please select a longer stay.';
-                return;
-            }
+    // Validates the form and returns the inquiry as plain text, or null.
+    function inquiryText() {
+        if (!form.reportValidity()) return null;
+        const nights = nightCount();
+        if (nights < minNights()) {
+            warnEl.style.display = 'block';
+            warnEl.textContent = '⚠ ' + t('warn_longer', minNights());
+            warnEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            return null;
         }
+        const v = id => document.getElementById(id).value.trim();
+        return [
+            'Hello! I would like to inquire about Dominion Beach House.',
+            '',
+            'Name: ' + v('fname') + ' ' + v('lname'),
+            'Email: ' + v('email'),
+            v('phone') ? 'Phone: ' + v('phone') : null,
+            'Check-in: ' + v('checkin'),
+            'Check-out: ' + v('checkout') + ' (' + nights + ' nights)',
+            'Guests: ' + v('guests'),
+            v('message') ? '\n' + v('message') : null,
+        ].filter(x => x !== null).join('\n');
+    }
 
-        const btn = document.getElementById('formSubmit');
-        btn.textContent = 'Sending…';
-        btn.disabled = true;
+    form.addEventListener('submit', e => {
+        e.preventDefault();
+        const text = inquiryText();
+        if (!text) return;
+        const url = document.getElementById('contactPhone').href + '?text=' + encodeURIComponent(text);
+        if (!window.open(url, '_blank')) location.href = url;
+    });
 
-        const form = e.target;
-        const data = new FormData(form);
-
-        fetch('/', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-            body: new URLSearchParams(data).toString() })
-            .then(() => {
-                btn.textContent = 'Enquiry Sent!';
-                btn.style.background = '#2a7a4f';
-                form.reset();
-                warnEl.style.display = 'none';
-                setTimeout(() => { btn.textContent = 'Send Enquiry'; btn.style.background = ''; btn.disabled = false; }, 5000);
-            })
-            .catch(() => {
-                btn.textContent = 'Send Enquiry';
-                btn.disabled = false;
-                alert('Something went wrong. Please email us directly at dominionbeachhouse@icloud.com');
-            });
+    document.getElementById('formEmail').addEventListener('click', () => {
+        const text = inquiryText();
+        if (!text) return;
+        const to = document.getElementById('contactEmail').textContent.trim();
+        location.href = 'mailto:' + to + '?subject=' + encodeURIComponent('Inquiry – Dominion Beach House') + '&body=' + encodeURIComponent(text);
     });
 
 })();
@@ -1709,7 +1814,8 @@ if (window.netlifyIdentity) {
         minimal: { serif: "'DM Serif Display', Georgia, serif",   sans: "'DM Sans', system-ui, sans-serif" }
     };
 
-    function setText(id, val) { var el = document.getElementById(id); if (el && val) el.textContent = val; }
+    // Clearing data-en makes i18n.js re-read the English text after it changes.
+    function setText(id, val) { var el = document.getElementById(id); if (el && val) { el.textContent = val; delete el.dataset.en; } }
     function makeImg(src, cls) { var img = document.createElement('img'); img.src = src; img.className = cls; return img; }
 
     function applyFont(style) {
@@ -1739,7 +1845,7 @@ if (window.netlifyIdentity) {
             // Story heading (preserves <br>)
             if (c.story_heading) {
                 var sh = document.getElementById('storyHeading');
-                if (sh) sh.innerHTML = c.story_heading.replace(/\n/g, '<br>');
+                if (sh) { sh.innerHTML = c.story_heading.replace(/\n/g, '<br>'); delete sh.dataset.en; }
             }
 
             // Contact email
@@ -1759,7 +1865,7 @@ if (window.netlifyIdentity) {
             // Contact location
             if (c.contact_location) {
                 var loc = document.getElementById('contactLocation');
-                if (loc) loc.innerHTML = c.contact_location.replace(/\n/g, '<br>');
+                if (loc) { loc.innerHTML = c.contact_location.replace(/\n/g, '<br>'); delete loc.dataset.en; }
             }
 
             // Photo card captions
@@ -1769,6 +1875,8 @@ if (window.netlifyIdentity) {
 
             // Font style
             if (c.font_style) applyFont(c.font_style);
+
+            if (window.applyLang) window.applyLang();
         })
         .catch(function() {});
 

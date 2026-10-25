@@ -40,7 +40,7 @@ collections:
           - label: "Badge Text"
             name: hero_badge
             widget: string
-            hint: "Small text above the main title. E.g. 'Dominion Beach · New Golden Mile · Estepona'"
+            hint: "Small text above the main title. E.g. 'Marbella · Estepona · Costa del Sol'"
 
           - label: "Headline — Line 1"
             name: hero_h1_line1
@@ -144,7 +144,7 @@ collections:
           - label: "Price Per Night (€)"
             name: price_per_night
             widget: string
-            hint: "Number only, e.g. 500"
+            hint: "Number only, e.g. 200. Shown as 'Starting at €…'"
 
           - label: "Minimum Nights"
             name: min_nights
@@ -168,7 +168,7 @@ collections:
           - label: "Location Text"
             name: contact_location
             widget: text
-            hint: "Use a new line for line 2."
+            hint: "Shown under 'Dominion Beach House' on the map card. Use a new line for line 2."
 
   - name: photos
     label: "📸 Photos"
